@@ -1,0 +1,634 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0" version="26.0.6">
+  <diagram name="Page-1" id="s1ePpUAj8qYnk5aGNHbo">
+    <mxGraphModel dx="4844" dy="2012" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-201" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#EDEDED;opacity=60;" vertex="1" parent="1">
+          <mxGeometry x="-1090" y="1480" width="3050" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-202" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#EDEDED;opacity=60;" vertex="1" parent="1">
+          <mxGeometry x="-1091" y="2130" width="3050" height="288" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-203" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#EDEDED;opacity=60;" vertex="1" parent="1">
+          <mxGeometry x="-1091" y="2710" width="3050" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-207" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#EDEDED;opacity=60;" vertex="1" parent="1">
+          <mxGeometry x="-1091" y="3170" width="3050" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-200" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#EDEDED;opacity=60;" vertex="1" parent="1">
+          <mxGeometry x="-1090" y="1037" width="3050" height="185" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-199" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#EDEDED;opacity=60;" vertex="1" parent="1">
+          <mxGeometry x="-1090" y="583" width="3050" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-198" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#EDEDED;opacity=60;" vertex="1" parent="1">
+          <mxGeometry x="-1090" y="130" width="3050" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-1" value="&lt;i&gt;Soil Infiltration&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="130" width="120" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-2" value="Computed as:" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-1">
+          <mxGeometry y="30" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-3" value="+ Throughfall" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-1">
+          <mxGeometry y="60" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-4" value="+ Snowmelt" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-1">
+          <mxGeometry y="90" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-78" value="- Hortonian Runoff" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-1">
+          <mxGeometry y="120" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-1" target="zGQzw5GJpQY7eRZTATEy-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="350" as="sourcePoint" />
+            <mxPoint x="240" y="360" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="420" y="350" />
+              <mxPoint x="-600" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-6" target="zGQzw5GJpQY7eRZTATEy-19">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1000" y="690" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-6" value="&lt;i&gt;Capillary Reservoir&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="590" width="120" height="260" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-7" value="Compute max inflow as:" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-6">
+          <mxGeometry y="30" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-8" value="+Capillary inflow fraction of soil infiltration" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-6">
+          <mxGeometry y="80" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-9" value="+ Slow &amp;amp; fast interflow" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-6">
+          <mxGeometry y="150" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-29" value="+ Upslope Dunnian Surface runoff" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-6">
+          <mxGeometry y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-10" value="&lt;i&gt;Preferential Storage Reservoir&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-660" y="402" width="120" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-11" value="Computed as:" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-10">
+          <mxGeometry y="30" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-12" value="+ Previous storage" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-10">
+          <mxGeometry y="60" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-13" value="&lt;br&gt;&lt;div&gt;+ Max pref. infil.&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-10">
+          <mxGeometry y="90" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-77" value="- Flow above preferential storage max" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-10">
+          <mxGeometry y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-17" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-1" target="zGQzw5GJpQY7eRZTATEy-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="290" as="sourcePoint" />
+            <mxPoint x="180" y="400" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="420" y="350" />
+              <mxPoint x="780" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-19" value="&lt;i&gt;Recharge Zone&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="930" width="120" height="110" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-20" value="+ Max inflow to capillary reservoir up to max recharge zone storage" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-19">
+          <mxGeometry y="30" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-23" value="" style="endArrow=none;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1599" y="584" as="sourcePoint" />
+            <mxPoint x="1959" y="584" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-24" value="" style="endArrow=none;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1599" y="400.46" as="sourcePoint" />
+            <mxPoint x="1959" y="400.46" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-25" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.497;exitY=1.013;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-29" target="zGQzw5GJpQY7eRZTATEy-27">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="660" y="670" as="sourcePoint" />
+            <mxPoint x="660" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-26" value="" style="endArrow=none;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1599" y="852" as="sourcePoint" />
+            <mxPoint x="1959" y="852" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-27" value="&lt;i&gt;Capillary Reservoir&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="1040" width="120" height="180" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-28" value="Add max inflow to antecedent storage of capillary reservoir up to storage capacity" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-27">
+          <mxGeometry y="30" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-30" value="Move excess to gravity reservoir" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-27">
+          <mxGeometry y="110" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-31" value="" style="endArrow=none;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1598" y="1036" as="sourcePoint" />
+            <mxPoint x="1958" y="1036" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-32" value="&lt;i&gt;Gravity Reservoir&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1110" width="120" height="110" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-33" value="Recieve all excess from capillary reservoir" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-32">
+          <mxGeometry y="30" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-34" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.994;entryY=0.577;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-30" target="zGQzw5GJpQY7eRZTATEy-33">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="950" as="sourcePoint" />
+            <mxPoint x="730" y="900" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-43" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;if soil2gw_max = 0&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="zGQzw5GJpQY7eRZTATEy-34">
+          <mxGeometry x="-0.0967" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-36" value="" style="endArrow=none;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1599" y="1220" as="sourcePoint" />
+            <mxPoint x="1959" y="1220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-38" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;S1&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1756" y="240" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-39" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;S2&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1756" y="470" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-40" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;S3&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1756" y="680" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-41" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;S4&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1756" y="920" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-42" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;S5&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1756" y="1120" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-44" value="&lt;i&gt;Capillary Reservoir&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="1320" width="120" height="110" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-45" value="Partition Capillary Reservoir between gravity and groundwater" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-44">
+          <mxGeometry y="30" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-48" value="&lt;i&gt;Gravity Reservoir&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1320" width="120" height="160" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-49" value="Recieve remaining excess from capillary reservoir once storage to groundwater reservoir is accounted for" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-48">
+          <mxGeometry y="30" width="120" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-50" value="" style="endArrow=classic;html=1;rounded=0;exitX=-0.017;exitY=0.279;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.014;entryY=0.173;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-45" target="zGQzw5GJpQY7eRZTATEy-49">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="690" y="1360" as="sourcePoint" />
+            <mxPoint x="570" y="1372" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-51" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;if soil2gw_max &amp;gt; 0&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="zGQzw5GJpQY7eRZTATEy-50">
+          <mxGeometry x="-0.0967" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-53" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.499;entryY=0.963;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-48" target="zGQzw5GJpQY7eRZTATEy-33">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="110" y="1270" as="sourcePoint" />
+            <mxPoint x="170" y="1240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-54" value="" style="endArrow=none;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1599" y="1480" as="sourcePoint" />
+            <mxPoint x="1959" y="1480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-58" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;S6&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1756" y="1340" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-59" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;entryX=0.5;entryY=1.017;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-44" target="zGQzw5GJpQY7eRZTATEy-30">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="790" y="1310" as="sourcePoint" />
+            <mxPoint x="779" y="1250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-60" value="&lt;i&gt;Groundwater Reservoir&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="1320" width="120" height="160" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-61" value="Excess from capillary reservoir up to soil2gw_max" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-60">
+          <mxGeometry y="30" width="120" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-62" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.993;exitY=0.268;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.026;entryY=0.157;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-45" target="zGQzw5GJpQY7eRZTATEy-61">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="860" y="1370" as="sourcePoint" />
+            <mxPoint x="990" y="1371" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-63" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;if soil2gw_max &amp;gt; 0&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="zGQzw5GJpQY7eRZTATEy-62">
+          <mxGeometry x="-0.0967" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-64" value="&lt;i&gt;Gravity Reservoir&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="1560" width="120" height="270" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-80" value="Calculate gravity reservoir as:&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-64">
+          <mxGeometry y="30" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-87" value="+ antecedent storage" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-64">
+          <mxGeometry y="80" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-88" value="+ excess from S5 or S6" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-64">
+          <mxGeometry y="130" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-65" value="Remove storage above preferential flow threshold and move it to preferential flow reservoir" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-64">
+          <mxGeometry y="160" width="120" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-66" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;S7&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1756" y="1620" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-68" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.488;exitY=1.049;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-77" target="zGQzw5GJpQY7eRZTATEy-69">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-602" y="612" as="sourcePoint" />
+            <mxPoint x="-600" y="1542" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-69" value="&lt;i&gt;Preferential Flow Reservoir&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-660" y="1692" width="120" height="140" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-70" value="Receive flow above preferential flow threshold from gravity reservoir&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-69">
+          <mxGeometry y="30" width="120" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-71" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.498;exitY=1.006;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-49" target="zGQzw5GJpQY7eRZTATEy-64">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="1500" as="sourcePoint" />
+            <mxPoint x="159.65999999999997" y="1699" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-72" value="" style="endArrow=classic;html=1;rounded=0;entryX=1.001;entryY=0.447;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.009;exitY=0.442;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-65" target="zGQzw5GJpQY7eRZTATEy-70">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="1639" as="sourcePoint" />
+            <mxPoint x="90" y="1719" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-73" value="&lt;i&gt;Dunnian Surface Runoff&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1020" y="402" width="120" height="110" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-74" value="Receive preferential storage above max storage capacity" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-73">
+          <mxGeometry y="30" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-76" value="" style="endArrow=classic;html=1;rounded=0;exitX=-0.007;exitY=0.346;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.015;entryY=0.489;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-12" target="zGQzw5GJpQY7eRZTATEy-74">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-690" y="472" as="sourcePoint" />
+            <mxPoint x="-890" y="472" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-81" value="" style="endArrow=none;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1599" y="1830" as="sourcePoint" />
+            <mxPoint x="1959" y="1830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-82" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;S8&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1756" y="1970" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-83" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1.009;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-74" target="zGQzw5GJpQY7eRZTATEy-94">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-953" y="549" as="sourcePoint" />
+            <mxPoint x="-960" y="1262" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-84" value="&lt;i&gt;Preferential Flow Reservoir&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-660" y="1952" width="120" height="180" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-85" value="Calculate preferential flow reservoir up to max threshold as:&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-84">
+          <mxGeometry y="30" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-89" value="+ Excess capillary inflow to grav res" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-84">
+          <mxGeometry y="100" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-90" value="+ antecedent storage" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-84">
+          <mxGeometry y="150" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-86" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.504;exitY=1.017;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-70" target="zGQzw5GJpQY7eRZTATEy-84">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-580" y="1642" as="sourcePoint" />
+            <mxPoint x="-600" y="1932" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-94" value="&lt;i&gt;Dunnian Surface Runoff&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1020" y="2022" width="120" height="110" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-95" value="Receive preferential storage above max storage capacity" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-94">
+          <mxGeometry y="30" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-97" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=-0.009;exitY=0.779;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-89" target="zGQzw5GJpQY7eRZTATEy-95">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-790" y="2092" as="sourcePoint" />
+            <mxPoint x="-740" y="2042" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-100" value="" style="endArrow=none;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1600" y="2130" as="sourcePoint" />
+            <mxPoint x="1960" y="2130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-101" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;S9&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1756" y="2270" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-106" value="&lt;i&gt;Gravity Reservoir&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="2230" width="120" height="140" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-110" value="Remove slow interflow from gravity reservoir" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-106">
+          <mxGeometry y="30" width="120" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-111" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.499;exitY=1.046;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-65" target="zGQzw5GJpQY7eRZTATEy-106">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="1890" as="sourcePoint" />
+            <mxPoint x="180" y="2010" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-112" value="&lt;i&gt;Slow interflow&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-210" y="2230" width="120" height="140" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-113" value="Receive slow interflow from gravity reservoir" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-112">
+          <mxGeometry y="30" width="120" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-114" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-110" target="zGQzw5GJpQY7eRZTATEy-113">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-10" y="1930" as="sourcePoint" />
+            <mxPoint x="-10" y="2325" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-115" value="&lt;i&gt;Groundwater Reservoir&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="2530" width="120" height="160" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-116" value="Receive gravity drainage from gravity reservoir" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-115">
+          <mxGeometry y="30" width="120" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-117" value="" style="endArrow=none;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1600" y="2420" as="sourcePoint" />
+            <mxPoint x="1960" y="2420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-118" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;S11&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1766" y="2790" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-119" value="&lt;i&gt;Gravity Reservoir&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="2550" width="120" height="140" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-120" value="Remove gravity drainage from current gravity reservoir" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-119">
+          <mxGeometry y="30" width="120" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-121" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1.018;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-110" target="zGQzw5GJpQY7eRZTATEy-119">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="170" y="2390" as="sourcePoint" />
+            <mxPoint x="160" y="2540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-123" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-60" target="zGQzw5GJpQY7eRZTATEy-115">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1079.57" y="1490" as="sourcePoint" />
+            <mxPoint x="1100" y="2320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-124" value="" style="endArrow=none;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1599" y="2709" as="sourcePoint" />
+            <mxPoint x="1959" y="2709" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-125" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;S10&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1766" y="2540" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-126" value="&lt;i&gt;Preferential Flow Reservoir&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-660" y="2730" width="120" height="100" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-127" value="&lt;div&gt;Remove fast interflow from current PFR&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-126">
+          <mxGeometry y="30" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-130" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-84" target="zGQzw5GJpQY7eRZTATEy-126">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-600" y="2150" as="sourcePoint" />
+            <mxPoint x="-600.37" y="2258" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-131" value="" style="endArrow=classic;html=1;rounded=0;exitX=1.003;exitY=0.437;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.015;entryY=0.421;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-127" target="zGQzw5GJpQY7eRZTATEy-133">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-370" y="2451" as="sourcePoint" />
+            <mxPoint x="-390" y="2790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-132" value="&lt;i&gt;Fast Interflow&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-380" y="2730" width="120" height="100" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-133" value="&lt;div&gt;Receive fast interflow from PFR&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-132">
+          <mxGeometry y="30" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-134" value="&lt;i&gt;Dunnian Surface Runoff&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-1019" y="2923" width="120" height="230" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-135" value="Compute Dunnian Surface Runoff as sum of:" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-134">
+          <mxGeometry y="30" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-140" value="+ excess PFR infiltration from step 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-134">
+          <mxGeometry y="110" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-141" value="+ excess from gravity reservoir from step 8" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-134">
+          <mxGeometry y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-136" value="" style="endArrow=none;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1599" y="2899" as="sourcePoint" />
+            <mxPoint x="1959" y="2899" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-137" value="" style="endArrow=none;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1599" y="3170" as="sourcePoint" />
+            <mxPoint x="1959" y="3170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-138" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;S12&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1766" y="3040" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-142" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.495;exitY=1.033;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.496;entryY=-0.027;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-95" target="zGQzw5GJpQY7eRZTATEy-134">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-840.4799999999996" y="2133.4399999999996" as="sourcePoint" />
+            <mxPoint x="-660" y="2780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-143" value="&lt;i&gt;Cascading flow&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-530" y="3390" width="120" height="250" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-144" value="IF cascades are active compute Cascading flow as sum of:" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-143">
+          <mxGeometry y="30" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-145" value="+ Fast/ slow interflow" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-143">
+          <mxGeometry y="100" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-146" value="+ Dunnian surface runoff" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-143">
+          <mxGeometry y="150" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-168" value="Add Cascading flow to downslope HRUs" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-143">
+          <mxGeometry y="200" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-157" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1.06;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-113" target="zGQzw5GJpQY7eRZTATEy-143">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-220" y="2690" as="sourcePoint" />
+            <mxPoint x="-450" y="3240" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-150" y="3240" />
+              <mxPoint x="-470" y="3240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-165" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;IF cascades active&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="zGQzw5GJpQY7eRZTATEy-157">
+          <mxGeometry x="0.5124" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-163" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0.99;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-141" target="zGQzw5GJpQY7eRZTATEy-143">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-870" y="3290" as="sourcePoint" />
+            <mxPoint x="-360" y="3280" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-960" y="3280" />
+              <mxPoint x="-470" y="3280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-164" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;IF cascades active&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="zGQzw5GJpQY7eRZTATEy-163">
+          <mxGeometry x="0.058" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-166" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.499;exitY=1.007;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-133">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-320" y="2870" as="sourcePoint" />
+            <mxPoint x="-470" y="3390" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-320" y="2970" />
+              <mxPoint x="-470" y="2970" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-167" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;IF cascades active&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="zGQzw5GJpQY7eRZTATEy-166">
+          <mxGeometry x="-0.3668" y="-1" relative="1" as="geometry">
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-169" value="" style="endArrow=none;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1600" y="3661" as="sourcePoint" />
+            <mxPoint x="1960" y="3661" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-170" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;S13&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1766" y="3390" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-171" value="&lt;i&gt;Recharge Zone&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="3710" width="120" height="110" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-172" value="Remove ET from upper zone" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-171">
+          <mxGeometry y="30" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-173" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;S14&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1766" y="3760" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-175" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.503;exitY=1.041;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-20" target="zGQzw5GJpQY7eRZTATEy-171">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1360" y="1090" as="sourcePoint" />
+            <mxPoint x="1330" y="1550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-183" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.006;entryY=0.573;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-120" target="zGQzw5GJpQY7eRZTATEy-116">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="2635" as="sourcePoint" />
+            <mxPoint x="340" y="2585" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-177" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=light-dark(#ffffff, #ededed);" vertex="1" parent="1">
+          <mxGeometry x="759" y="2560" width="50" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-179" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.497;exitY=1.023;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="zGQzw5GJpQY7eRZTATEy-45" target="zGQzw5GJpQY7eRZTATEy-186">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="710" y="2230" as="sourcePoint" />
+            <mxPoint x="790" y="3780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-186" value="&lt;i&gt;Capillary Reservoir&lt;/i&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="730" y="3710" width="120" height="170" as="geometry">
+            <mxRectangle x="440" y="400" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-187" value="Remove ET from upper zone" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-186">
+          <mxGeometry y="30" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-188" value="Remove transpiration from lower zone" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="zGQzw5GJpQY7eRZTATEy-186">
+          <mxGeometry y="110" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zGQzw5GJpQY7eRZTATEy-208" value="" style="endArrow=none;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1600" y="3880" as="sourcePoint" />
+            <mxPoint x="1960" y="3880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
