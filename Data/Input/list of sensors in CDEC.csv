@@ -1,0 +1,269 @@
+Sensor_no,Sensor_name,Unit
+1,River stage,ft
+2,Accumulated precipitation,in
+3,Snow water content,in
+4,Air temperature,deg f
+5,Electricial conductivity,ms/cm
+6,Reservoir elevation,ft
+7,Scheduled reservoir release,cfs
+8,Full natural flow,cfs
+9,Wind speed,mph
+10,Wind direction,deg
+11,Wood fuel moisture,%
+12,Relative humidity,%
+13,Wood probe fuel temp,deg f
+14,Battery voltage,volts
+15,Reservoir storage,af
+16,Tipping bucket precipitation,in
+17,Atmospheric pressure,in
+18,Snow depth,in
+19,Snow elevation of snow line,ft
+20,River discharge,cfs
+21,Water velocity,ft/sec
+22,Reservoir storage change,af
+23,Reservoir outflow,cfs
+24,Evapotranpiration,in
+25,Water temperature,deg f
+26,Solar radiation,w/m^2
+27,Turbidity,ntu
+28,Chlorophyll,ug/l
+29,Net radiation,w/m^2
+30,Air temperature average,deg f
+31,Air temperature maximum,deg f
+32,Air temperature minimum,deg f
+33,Vapor pressure average,in
+34,Vapor pressure maximum,in
+35,Vapor pressure minimum,in
+36,Dew point temperature,deg f
+37,Dew duration,hours
+38,Soil temperature average,deg f
+39,Soil temperature maximum,deg f
+40,Soil temperature minimum,deg f
+41,Mean daily flow,cfs
+42,Natural lake elevation,ft
+43,Pool elevation,ft
+44,Freezing level elevation,ft
+45,Precipitation incremental,in
+46,Runoff volume,af
+47,Accumulated wind travel,miles
+48,Power generation discharge,cfs
+49,Flow direction,+ -
+50,Snow act. Increment,in
+51,Snow density,%
+52,Snow or soil surface temperature,deg f
+53,"Ice fail status, 1=fail, 0=ok",.
+54,Ice tips,tips
+55,Total energy generation,mwh
+56,Pumping use-power generation,mw
+57,Pumping use-energy generation,mwh
+58,Station load-energy generation,mwh
+59,Total power generation,mw
+60,Station load-power generation,mw
+61,Dissolved oxygen,mg/l
+62,pH value,ph
+63,Suspended sediment,mg/l
+64,Pan increment evaporation,in
+65,Full natural flow,af
+66,Monthly volume flow,af
+67,Estimated accreations,af
+68,Lake computed evaporation,af
+69,Canel diversion storage,af
+70,Pumping discharge,cfs
+71,Spillway discharge,cfs
+72,Irrigation and consumption flow,af
+73,Auxiliary reading snow,in
+74,Lake computed evaporation,cfs
+75,Synthetic flow,cfs
+76,Reservoir inflow,cfs
+77,Peak gust wind,mph
+78,Direction of peak gust wind,deg
+79,Snow data quality flag,flag
+80,Revised precipitation,in
+81,Precipitation index,%
+82,Revised snow water content,in
+83,Low snow index,%
+84,High snow index,%
+85,Control regulating discharge,cfs
+86,Control snow depth,in
+87,Control snow water content,in
+88,Manometer snow,in
+89,Manometer precipitation,in
+90,Lake abv spec datum height,ft
+91,Reservoir inflow-last 6hr average,cfs
+92,Electrical cond bottom milli S,ms/cm
+93,Wind travel length,miles
+94,Reservoir top conserv storage,af
+95,Creek bed elevation from mean sea level,ft
+96,Field gamma temp voltage,ml vol
+97,Ref gamma temp voltage,ml vol
+98,Field gamma voltage,ml vol
+99,Ref gamma voltage,ml vol
+100,Electrical conductivity micro s,us/cm
+101,Total organic carbon oxidation,mg/l
+102,Electrical conductivity bottom micro s,us/cm
+103,Solar radiation average,w/m^2
+104,Solar radiation minimum,w/m^2
+105,Solar radiation maximum,w/m^2
+106,Net solar radiation average,w/m^2
+107,Net solar radiation minimum,w/m^2
+108,Net solar radiation maximum,w/m^2
+109,Dissolved organic carbon combust,mg/l
+110,Canal diversion flow,cfs
+111,Irrigation and consumption flow,cfs
+112,Total organic carbon combustion,mg/l
+113,Ultra violet 254 nano meters,u/cm
+114,Fluoresces n rhodamine or chlorop,fluoro
+115,Aux battery voltage,volts
+116,Irradiance average,w/m^2
+117,Irradiance minimum,w/m^2
+118,Irradiance maximum,w/m^2
+119,Reflected irradiance average,w/m^2
+120,Reflected irradiance minimum,w/m^2
+121,Reflected irradiance maximum,w/m^2
+122,Soil moisture,%
+123,Barometric pressure maximum,in
+124,Barometric pressure minimum,in
+125,Total solar radiation,c/m^2
+126,Relative humidity average,%
+127,Relative humidity maximum,%
+128,Relative humidity minimum,%
+129,Vapor pressure average,millib
+130,Vapor pressure maximum,millib
+131,Vapor pressure minimum,millib
+132,Vapor pressure,millib
+133,Wind speed minimum,mph
+134,Wind speed average,mph
+135,Reservoir sched rel alt,cfs
+136,Reservoir sched rel cand,cfs
+138,Flow computed alt A,cfs
+139,Flow computed alt B,cfs
+140,Flow computed alt C,cfs
+141,River stage NAVD88,ft
+142,Instantaneous flow,cfs
+143,Observed flow,cfs
+144,River stage NGVD29,ft
+145,Daily calculation X2,km
+146,Water temperature,deg c
+147,Aux snow depth,in
+148,"Dissolved chloride, Cl",mg/l
+149,"Dissolved bromide, Br",mg/l
+150,Dissolved nitrate NO3,mg/l
+151,Dissolved phosphate PO4,mg/l
+152,Dissolved sulphat SO4,mg/l
+153,Dissolved fluoride,mg/l
+154,Temperature index,deg f
+155,Delta runoff 1 day calculation,cfs
+156,Storage simulated alt A,af
+157,Storage simulated alt B,af
+158,Storage simulated alt C,af
+159,Reservoir forecasted top cons stor,af
+160,Wetness index forecasted,.
+161,Wetness index sum avg fcst,in
+162,Reservoir forecasted top cons elevation,ft
+163,Absorption dissolved organic carbon,mg/l
+164,"Control switch, 0-off, 1-on",on/off
+165,River discharge precise flow,cfs.xx
+166,ESRD Candidate release,cfs
+167,ESRD Projected release,cfs
+168,ESRD Alternative release,cfs
+169,Forecasted stage,ft
+170,Depth of reading blw surface,ft
+171,Ten day mean flow,cfs
+172,Rotation rt divertible flow,%
+173,Rotation one day mean flow,%
+174,Rotation ten day mean flow,%
+175,Evaporation rate,in/day
+176,Elevation proj tail water stg,ft
+177,Height of tide,ft
+178,Head height,ft
+179,Dissolved organic carbon oxidation,mg/l
+180,Pool elevation simulated alt A,ft
+181,Pool elevation simulated alt B,ft
+182,Pool elevation simulated alt C,ft
+183,Rate of rise elevation sim alt A,ft/hr
+184,Rate of rise elevation sim alt B,ft/hr
+185,Rate of rise elevation sim alt C,ft/hr
+186,Grnd wtr depth below water 1,ft
+187,Grnd wtr depth below water 2,ft
+188,Grnd wtr depth below water 3,ft
+189,Grnd wtr depth below water 4,ft
+190,Grnd wtr water temperature 1,deg f
+191,Grnd wtr water temperature 2,deg f
+192,Grnd wtr water temperature 3,deg f
+193,Grnd wtr water temperature 4,deg f
+194,Soil temperature at depth 1,deg f
+195,Soil temperature at depth 2,deg f
+196,Soil temperature at depth 3,deg f
+197,Soil moisture at depth 1,%
+198,Soil moisture at depth 2,%
+199,Soil moisture at depth 3,%
+200,Reservoir abv top of conserv storage,af
+201,Dissolved oxygen 3 meters,mg/l
+202,Dissolved oxygen 6 meters,mg/l
+203,Incrmnt 4A-4A precipitation,in
+204,Aux river stage,ft
+205,Qpf 6 hour increment,in
+206,Qpf 12 hour increment,in
+207,Qpf daily increment,in
+208,Turbidity variance,ntu
+209,Precipitation aux,in
+210,Flow aux,cfs
+211,% Gate opened 01,%
+212,% Gate opened 02,%
+213,% Gate opened 03,%
+214,% Gate opened 04,%
+215,% Gate opened 05,%
+216,% Gate opened 06,%
+217,% Gate opened 07,%
+218,% Gate opened 08,%
+219,% Gate opened 09,%
+220,% Gate opened 10,%
+221,Turbidity,fnu
+222,Median elec conductivity micro S,us/cm
+223,Min elec conductivity micro S,us/cm
+224,Max elec conductivity micro S,us/cm
+225,Water temperature median,deg f
+226,Water temperature minimum,deg f
+227,Water temperature maximum,deg f
+228,Dissolved oxygen median,mg/l
+229,Dissolved oxygen minimum,mg/l
+230,Dissolved oxygen maximum,mg/l
+231,Ground subsidence or displacement,ft
+232,Ensemble elevation,ft
+233,Ensemble flow,cfs
+234,Ensemble esrd,cfs
+235,Ensemble rate of rise,ft/hr
+236,Ensemble storage,af
+237,Snow water content minimum,in
+238,Snow water content maximum,in
+239,Soil temperature at depth 50cm,deg f
+240,Soil temperature at depth 60cm,deg f
+241,Soil temperature at depth 70cm,deg f
+242,Soil moisture at depth 50cm,%
+243,Soil moisture at depth 60cm,%
+244,Soil moisture at depth 70cm,%
+245,Albedo,%
+246,Solar reflected radiation,w/m^2
+247,Solar incoming radiation,w/m^2
+248,Solar radiation net,w/m^2
+249,Infrared reflected radiation,w/m^2
+250,Infrared incoming radiation,w/m^2
+251,Infrared net radiation,w/m^2
+252,Net total radiation,w/m^2
+253,Risk based flow,cfs
+254,Pore water pressure,kpa
+255,Piezometer digits,int
+256,Precipitation rate,mm/min
+257,Ice events,ct/dur
+258,Saturation vapor pressure,kpa
+259,Reservoir alt top cons storage,af
+260,A-J 10% forecast exceedence,af
+261,A-J 50% forecast exceedence,af
+262,A-J 90% forecast exceedence,af
+263,Water year 10% forecast exceedence,af
+264,Water year 50% forecast exceedence,af
+265,Water year 90% forecast exceedence,af
+266,Fluorescnt dissolved organic matter,qsu
+267,Blue green algae,mg/l
+268,Dissolved oxygen saturation,mg/l
+269,pH value,mv

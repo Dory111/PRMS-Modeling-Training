@@ -5,10 +5,11 @@
 # 3. Streamflow
 # 4. Tributary Inflow (calculated from FJ Streamflow)
 #
-library(RSVP)
+# install.packages('cimir')
+# install.packages('readr')
 library(cimir)
 library(readr)
-
+setwd('C:/Users/ChristopherDory/LWA Dropbox/Christopher Dory/Projects/PRMS-Modeling-Training/Code')
 #===========================================================================================
 # Settings 
 #===========================================================================================

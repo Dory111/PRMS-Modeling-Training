@@ -1,11 +1,17 @@
 #####***README***#####
-
+#===========================================================================================
 #####***DEFINE DIRECTORIES***#####
 username=Sys.info()[["user"]]
 dropbox_dir=paste0("C:/Users/",username,"/LWA Dropbox/")
-path=paste0(dropbox_dir,"00_Project-Repositories/00598-Siskiyou-GSP-data/inputs/")
+# path=paste0(dropbox_dir,"00_Project-Repositories/00598-Siskiyou-GSP-data/inputs/")
+path=paste0(dropbox_dir,'Christopher Dory/Projects/PRMS-Modeling-Training/Data/Input/')
 setwd(path)
 
+#===========================================================================================
+
+
+
+#===========================================================================================
 #####***LOAD PACKAGE***#####
 pkgTest <- function(x)
 {
@@ -15,10 +21,13 @@ pkgTest <- function(x)
     if(!require(x,character.only = TRUE)) stop("Package not found")
   }
 }
-
 pkgTest("prism")
 pkgTest("lubridate")
+#===========================================================================================
 
+
+
+#===========================================================================================
 #####***DOWNLOAD PRISM DATA***#####
 dir.create(paste(path,"PRISM/",sep=""))
 path_prism_ppt=paste(path,"PRISM/Precipitation",sep="")
@@ -29,11 +38,20 @@ path_prism_tmean=paste(path,"PRISM/Air temperature mean",sep="")
 dir.create(path_prism_tmean)
 path_prism_tmax=paste(path,"PRISM/Air temperature maximum",sep="")
 dir.create(path_prism_tmax)
+#===========================================================================================
 
+
+
+
+
+
+#===========================================================================================
+# Does file exist or not
+# if file doex not exist then the start_date gives spin up and the end date is today
 flag=file.exists(paste(path,"PRISM/last_downloaded_date.RData",sep=""))
 if(flag==T){
-  load(paste(path,"PRISM/last_downloaded_date.RData",sep=""))
-  start_date=end_date
+  load(paste(path,"PRISM/last_downloaded_date.RData",sep="")) # if the file exists then load it
+  start_date=end_date 
   d=day(start_date)
   m=month(start_date)
   y=year(start_date)-1 # Update provisional and early PRISM data
@@ -41,12 +59,15 @@ if(flag==T){
   end_date=today()-1
 } else {
   start_date="1981-10-01"   # Scott Valley PRMS starting earlier (1985) to allow for a spin-up period. Back to 1981 for verifying water year type calc - KMA
-  end_date=today()-1}
+  end_date=today()-1
+}
+#===========================================================================================
+
 
 options(prism.path=path_prism_ppt)
 get_prism_dailys(
   type = "ppt", 
-  minDate = start_date, 
+  minDate = "2024-03-9", 
   maxDate = end_date, 
   keepZip = FALSE
 )
