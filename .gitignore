@@ -1,3 +1,11 @@
 *.pdf
 *.docx
 Data/Input/fveg22_1.gdb
+Data/Input/PRISM/Precipitation
+Data/Input/PRISM/Air temperature maximum
+Data/Input/PRISM/Air temperature minimum
+Data/Input/PRISM/Air temperature mean
+Data/Input/PRISM_Temporary_Holding/Precipitation
+Data/Input/PRISM_Temporary_Holding/Air temperature maximum
+Data/Input/PRISM_Temporary_Holding/Air temperature minimum
+Data/Input/PRISM_Temporary_Holding/Air temperature mean

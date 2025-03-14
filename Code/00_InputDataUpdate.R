@@ -203,8 +203,6 @@ get_gsp_data_f <- function(
 
 
 
-
-
 #===========================================================================================
 # Test whether packages are loaded and if not install them
 #===========================================================================================
@@ -233,7 +231,6 @@ pause_sec <- function(x)
   proc.time() - p1 # The cpu usage should be negligible
 }
 # ------------------------------------------------------------------------------------------------
-
 
 
 
@@ -931,6 +928,7 @@ get_prism_data_f <- function(path_gsp_data,
   station_list=subset(station_list,select=-latlon)
   # ------------------------------------------------------------------------------------------------
   
+  
   # ------------------------------------------------------------------------------------------------
   path_prism = paste0(path_prms_data)
   path_prism_ppt=paste(path_prism,"prism/Precipitation/",sep="")
@@ -951,7 +949,7 @@ get_prism_data_f <- function(path_gsp_data,
   
   # ------------------------------------------------------------------------------------------------
   #if(update_prism_data==F|add_current_stations==T){
-  ppt_stack = pd_stack(prism_archive_subset("ppt","daily",minDate = start_date_prism,maxDate = end_date_prism))
+  ppt_stack = pd_stack(prism_archive_subset("ppt","daily",minDate = NULL,maxDate = NULL))
   #save(ppt_stack,file=paste0(path_gsp_data,"outputs/",area,"/prism/","ppt_stack.RData"))
   ppt_station_list = raster::extract(ppt_stack, station_list_prism)
   colnames(ppt_station_list)=gsub("_bil","",colnames(ppt_station_list))
