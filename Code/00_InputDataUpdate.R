@@ -3,6 +3,20 @@
 
 
 
+# ------------------------------------------------------------------------------------------------
+# Setting location of prms data path and gsp data path
+username=Sys.info()[["user"]]
+dropbox_dir=paste0("C:/Users/",username,"/LWA Dropbox/")
+path_prms_data=paste0(dropbox_dir,"00_Project-Repositories/00598-PRMS-Modeling/butte/data/")
+path_gsp_data=paste0(dropbox_dir,"00_Project-Repositories/00598-Siskiyou-GSP-data/")
+path_shared_data <- paste0(dropbox_dir,"00_Project-Repositories/00598-PRMS-Modeling/shared_data/PRISM/")
+# ------------------------------------------------------------------------------------------------
+# path_prms_data <- path # "C:/Users/ChristopherDory/LWA Dropbox/00_Project-Repositories/00598-PRMS-Modeling/butte/data/"
+# path_gsp_data <- path # "C:/Users/ChristopherDory/LWA Dropbox/00_Project-Repositories/00598-Siskiyou-GSP-data/"
+# area <- 'butte'
+
+
+
 #===========================================================================================
 # get_gsp_data
 # placeholder explanation to be filled in as Chris learns more about these functions
@@ -35,17 +49,6 @@ get_gsp_data_f <- function(
   end_date <- today() - as.numeric(strsplit(as.character(today()),'-')[[1]][3])
   # ------------------------------------------------------------------------------------------------
   
-  
-  # ------------------------------------------------------------------------------------------------
-  # Setting location of prms data path and gsp data path
-  username=Sys.info()[["user"]]
-  dropbox_dir=paste0("C:/Users/",username,"/LWA Dropbox/")
-  path_prms_data=paste0(dropbox_dir,"00_Project-Repositories/00598-PRMS-Modeling/butte/data/")
-  path_gsp_data=paste0(dropbox_dir,"00_Project-Repositories/00598-Siskiyou-GSP-data/")
-  # ------------------------------------------------------------------------------------------------
-  # path_prms_data <- path # "C:/Users/ChristopherDory/LWA Dropbox/00_Project-Repositories/00598-PRMS-Modeling/butte/data/"
-  # path_gsp_data <- path # "C:/Users/ChristopherDory/LWA Dropbox/00_Project-Repositories/00598-Siskiyou-GSP-data/"
-  # area <- 'butte'
   
   # ------------------------------------------------------------------------------------------------
   # Test all the necessary packages
@@ -189,9 +192,7 @@ get_gsp_data_f <- function(
     
     get_prism_data_f(path_gsp_data,
                      path_prms_data,
-                     area,
-                     start_date,
-                     end_date)
+                     path_shared_data)
     
   } else {}
   # ------------------------------------------------------------------------------------------------
@@ -916,9 +917,7 @@ get_nrcs_data_f <- function(path_gsp_data,
 #===========================================================================================    
 get_prism_data_f <- function(path_gsp_data,
                              path_prms_data,
-                             area,
-                             start_date,
-                             end_date)
+                             path_shared_data)
   # ------------------------------------------------------------------------------------------------
   # Station list
   station_list=read.csv(file.path(path_prms_data,"prism","prism_stations.csv"))
@@ -930,10 +929,10 @@ get_prism_data_f <- function(path_gsp_data,
   
   
   # ------------------------------------------------------------------------------------------------
-  path_prism = paste0(path_prms_data)
-  path_prism_ppt=paste(path_prism,"prism/Precipitation/",sep="")
-  path_prism_tmin=paste(path_prism,"prism/Air temperature minimum/",sep="")
-  path_prism_tmax=paste(path_prism,"prism/Air temperature maximum/",sep="")
+  path_prism = paste0(path_shared_data)
+  path_prism_ppt=paste(path_prism,"Precipitation/",sep="")
+  path_prism_tmin=paste(path_prism,"Air temperature minimum/",sep="")
+  path_prism_tmax=paste(path_prism,"Air temperature maximum/",sep="")
   
   station_list_prism=station_list[,c("Longitude","Latitude")]
   # ------------------------------------------------------------------------------------------------

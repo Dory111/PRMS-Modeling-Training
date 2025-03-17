@@ -16,3 +16,17 @@
 
  
 
+ ===========
+ 2025-03-17 
+ ===========
+ Downloaded PRISM data for Air temperature maximum 2024-09-02 - 2025-02-28 
+ Updated PRISM data for Air temperature maximum NA -  
+
+ Downloaded PRISM data for Air temperature minimum 2024-02-28 - 2025-02-28 
+ Updated PRISM data for Air temperature minimum 2024-09-01 - 2024-09-01 
+
+ Downloaded PRISM data for Precipitation 2024-03-01 - 2025-02-28 
+ Updated PRISM data for Precipitation 2024-09-01 - 2024-09-01 
+
+ 
+
