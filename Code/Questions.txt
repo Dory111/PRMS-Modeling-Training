@@ -1,0 +1,13 @@
+1) Line 125 of original file removed:
+browser()
+not mentioned in model documentation and halted execution of code
+
+
+
+2) No errors in cdec data function following removal of 'browser()'
+do you still want the data to be stored in the GSP folder?
+for now I've directed it to the PRMS folder for consistency
+
+
+
+3) No errors in NWIS data function

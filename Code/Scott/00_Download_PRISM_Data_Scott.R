@@ -1,13 +1,16 @@
+# Created by Chris Dory
+# March 2025
+
 # ------------------------------------------------------------------------------------------------
 # Setting location of prms data path and gsp data path
 username <- Sys.info()[["user"]]
 dropbox_dir <- paste0("C:/Users/",username,"/LWA Dropbox/")
 ## path_prms_data <- 'C:/Users/ChristopherDory/LWA Dropbox/Christopher Dory/Projects/PRMS-Modeling-Training/Data/Input/PRISM/'
-path_shared_data <- 'C:/Users/ChristopherDory/LWA Dropbox/Christopher Dory/Projects/PRMS-Modeling-Training/Data/Input/PRISM/'
-path_holding_data <- 'C:/Users/ChristopherDory/LWA Dropbox/Christopher Dory/Projects/PRMS-Modeling-Training/Data/Input/PRISM_Temporary_Holding/'
-# path_holding_data <- paste0(dropbox_dir,"00_Project-Repositories/00598-PRMS-Modeling/shared_data/PRISM_Temporary_Holding/")
-# path_shared_data <- paste0(dropbox_dir,"00_Project-Repositories/00598-PRMS-Modeling/shared_data/PRISM/")
-path_prms_data <- paste0(dropbox_dir,"00_Project-Repositories/00598-PRMS-Modeling/butte/data/")
+# path_shared_data <- 'C:/Users/ChristopherDory/LWA Dropbox/Christopher Dory/Projects/PRMS-Modeling-Training/Data/Input/PRISM/'
+# path_holding_data <- 'C:/Users/ChristopherDory/LWA Dropbox/Christopher Dory/Projects/PRMS-Modeling-Training/Data/Input/PRISM_Temporary_Holding/'
+path_holding_data <- paste0(dropbox_dir,"00_Project-Repositories/00598-PRMS-Modeling/shared_data/PRISM_Temporary_Holding/")
+path_shared_data <- paste0(dropbox_dir,"00_Project-Repositories/00598-PRMS-Modeling/shared_data/PRISM/")
+path_prms_data <- paste0(dropbox_dir,"00_Project-Repositories/00598-PRMS-Modeling/scott/data/")
 path_prism_ppt <- paste(path_shared_data,"Precipitation",sep="")
 path_prism_tmin <- paste(path_shared_data,"Air temperature minimum",sep="")
 path_prism_tmax <- paste(path_shared_data,"Air temperature maximum",sep="")
@@ -19,14 +22,12 @@ path_holding_prism_tmax <- paste(path_holding_data,"Air temperature maximum",sep
 # ------------------------------------------------------------------------------------------------
 
 
-
-
-Download_Prism_Data(F) # dont download entire record, try to find date of provisional data or last downloaded date
+# # ------------------------------------------------------------------------------------------------
+# # Function run order
+Download_PRISM_Data(F) # dont download entire record, try to find date of provisional data or last downloaded date
 Update_PRISM_Data() # take downloaded data and check for updates in status
 Delete_Holding_Data() # delete temporary downloaded data (holding data)
-
-
-
+# # ------------------------------------------------------------------------------------------------
 
 
 #===========================================================================================
@@ -128,7 +129,7 @@ Download_PRISM_Data <- function(download_all)
       keepZip = FALSE
     )
     # ------------------------------------------------------------------------------------------------
-    save(end_date,file=paste(path_prms_data,"prism/last_downloaded_date.RData",sep=""))
+    save(end_date,file=paste(path_shared_data,"prism/last_downloaded_date.RData",sep=""))
   }
   # ------------------------------------------------------------------------------------------------
   
@@ -149,14 +150,14 @@ Download_PRISM_Data <- function(download_all)
     # If a file of the beginning of the provisional period exists
     # Then use it to set the start date of the download period
     # This prevents entire dataset from redownloading each time
-    if(file.exists(paste(path_prms_data,
-                         'prism/EP_Indices.csv',
+    if(file.exists(paste(path_shared_data,
+                         'EP_Indices.csv',
                          sep = '')))
     {
       
       # ------------------------------------------------------------------------------------------------
-      start_date <- read.csv(paste(path_prms_data,
-                                   'prism/EP_Indices.csv',
+      start_date <- read.csv(paste(path_shared_data,
+                                   'EP_Indices.csv',
                                    sep = ''))
       date_colnames <- colnames(start_date)
       start_date <- as.vector(unlist(start_date[1,]))
@@ -233,7 +234,7 @@ Download_PRISM_Data <- function(download_all)
     } else {
       
       winDialog(type = 'ok', message = paste('ERROR: date data not found in \n\n',
-                                             paste(path_prms_data,"prism/ \n\n",sep=""),
+                                             paste(path_shared_data," \n\n",sep=""),
                                              'EXECUTION HALT', sep = ''))
       flag_date_files <- T
       
@@ -375,7 +376,7 @@ Update_PRISM_Data <- function()
                 '===========\n')
   # ------------------------------------------------------------------------------------------------
   
-  dir <- 1
+  
   # ------------------------------------------------------------------------------------------------
   # get the names of files in each folder and check whether they've changed
   for(dir in 1:length(existing_directories_names))
@@ -406,8 +407,8 @@ Update_PRISM_Data <- function()
       
       
       
-      
-      
+      # existing_data_names[14650:15730]
+      # length(existing_data_names)
       # ------------------------------------------------------------------------------------------------
       # Sets up dataframes of existing and holding data that will allow merge and comparison
       existing_df <- matrix(ncol = 2,
@@ -539,6 +540,7 @@ Update_PRISM_Data <- function()
       # check if any statuses are unequal
       unequal_statuses <- which(holding_existing_df$Existing_Status != holding_existing_df$Holding_Status)
       unequal_statuses_dates <- holding_existing_df$Date_Unformatted[unequal_statuses]
+      max_date <- holding_existing_df$Date[nrow(holding_existing_df)]
       # ------------------------------------------------------------------------------------------------
       
       
@@ -591,14 +593,57 @@ Update_PRISM_Data <- function()
                     recursive = T) # move holding data into its place
           
           
-          unlink(holding_unequal_statuses_paths[folder],
-                 recursive = TRUE) # remove holding data now that it has been copied
+          # unlink(holding_unequal_statuses_paths[folder],
+          #        recursive = TRUE) # remove holding data now that it has been copied
           
         }
         # ------------------------------------------------------------------------------------------------
       }
       # ------------------------------------------------------------------------------------------------
       
+      
+      
+      # ------------------------------------------------------------------------------------------------
+      holding_df$Date_Unformatted <- rep(NA,nrow(holding_df))
+      for(i in 1:nrow(holding_df))
+      {
+        str <- paste(strsplit(as.character(holding_df$Date[i]),'-')[[1]][1],
+                     strsplit(as.character(holding_df$Date[i]),'-')[[1]][2],
+                     strsplit(as.character(holding_df$Date[i]),'-')[[1]][3],
+                     sep = '')
+        holding_df$Date_Unformatted[i] <- str
+        
+        
+      }
+      # ------------------------------------------------------------------------------------------------
+      
+      
+      
+      
+      # ------------------------------------------------------------------------------------------------
+      # if the extent of the downloaded data exceeds and cannot be merged onto existing data
+      exceedance_dates <- holding_df$Date_Unformatted[holding_df$Date > max_date]
+      if(length(exceedance_dates) > 0)
+      {
+        # ------------------------------------------------------------------------------------------------
+        # for each folder move it
+        for(i in 1:length(exceedance_dates))
+        {
+          
+          holding_exceedance_path <- holding_data_paths[grep(exceedance_dates[i], holding_data_paths)]
+          copy_path <- strsplit(holding_exceedance_path,'/')[[1]]
+          copy_path <- copy_path[1:(length(copy_path) - 1)]
+          copy_path[copy_path == 'PRISM_Temporary_Holding'] <- 'PRISM'
+          copy_path <- paste(paste(copy_path, collapse = '/'),'/', sep = '')
+          file.copy(from = holding_exceedance_path,
+                    to = copy_path,
+                    recursive = T) # move holding data into its place
+          
+        }
+        # ------------------------------------------------------------------------------------------------
+      }else{}
+      
+      # ------------------------------------------------------------------------------------------------
       
       
       # ------------------------------------------------------------------------------------------------
@@ -759,9 +804,7 @@ Get_PRISM_Directories <- function()
   
   
   # ------------------------------------------------------------------------------------------------
-  save_dir <- strsplit(path_shared_data,'/')[[1]]
-  save_dir <- save_dir[1:(length(save_dir)-1)]
-  save_dir <- paste(paste(save_dir, collapse = '/'),'/',sep='')
+  save_dir <- path_shared_data
   # ------------------------------------------------------------------------------------------------
   
   # ------------------------------------------------------------------------------------------------
