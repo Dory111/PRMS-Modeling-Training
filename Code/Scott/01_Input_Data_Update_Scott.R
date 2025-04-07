@@ -98,7 +98,8 @@ get_gsp_data_f <- function(
                     path_prms_data,
                     area,
                     start_date,
-                    end_date)
+                    end_date,
+                    F)
 
   }
   # ------------------------------------------------------------------------------------------------
@@ -228,7 +229,8 @@ get_cdec_data_f <- function(path_gsp_data,
                             path_prms_data,
                             area,
                             start_date,
-                            end_date)
+                            end_date,
+                            download_all)
 {
   
   
@@ -285,11 +287,21 @@ get_cdec_data_f <- function(path_gsp_data,
   } else{ # if data hasnt been downloaded before then must download all
     
     
-    start_date <- '1985-10-01'
+   
     
   }
   # ------------------------------------------------------------------------------------------------
   
+  
+  
+  # ------------------------------------------------------------------------------------------------
+  if(download_all == T)
+  {
+    
+    start_date <- '1985-10-01'
+    
+  }
+  # ------------------------------------------------------------------------------------------------
   
   
   
@@ -465,7 +477,7 @@ get_cdec_data_f <- function(path_gsp_data,
 
   
   
-  
+ 
   
   
 #===========================================================================================
@@ -545,9 +557,8 @@ get_nwis_data_f <- function(path_gsp_data,
         dplyr::pull(Station_ID)
     } else {
       
-      stations <- read_csv(file.path(path_gsp_data,"inputs","scott_nwis_stations.csv")) %>%
-        dplyr::rename(Station_ID = site_no) %>%
-        dplyr::filter(grepl('^11',Station_ID))
+      stations <- read_csv(file.path(path_gsp_data,"outputs","scott","nwis","nwis_monitoring_stations.csv"))
+
       write.csv(stations, file.path(path_prms_data,"nwis","PRMS","Scott_monitoring_stations.csv"), row.names = FALSE)
       stations <- stations %>% dplyr::pull(Station_ID)
     }
