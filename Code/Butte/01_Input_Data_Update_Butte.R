@@ -1469,7 +1469,7 @@ get_prism_data_f <- function(path_gsp_data,
     
     # ------------------------------------------------------------------------------------------------
     #if(update_prism_data==F|add_current_stations==T){
-    ppt_stack = pd_stack(prism_archive_subset("tmin","daily",minDate = NULL,maxDate = NULL))
+    tmin_stack = pd_stack(prism_archive_subset("tmin","daily",minDate = NULL,maxDate = NULL))
     # ------------------------------------------------------------------------------------------------
     
     
@@ -1535,13 +1535,13 @@ get_prism_data_f <- function(path_gsp_data,
     if(null_date_flag == T)
     {
 
-      write.csv(df8,file.path(path_prms_data,"/prism/Air temperature minimum/",paste(names(tmin_station_list_l)[m],".csv",sep="")),row.names = F)
+      write.csv(df8,file.path(path_prms_data,"/prism/Air temperature minimum/",paste(names(tmin_station_list_l)[n],".csv",sep="")),row.names = F)
 
     } else {
 
       # ------------------------------------------------------------------------------------------------
       # read old data left join it onto new data to check for where the status has changed
-      old_data <- read.csv(file.path(path_prms_data,"/prism/Air temperature minimum/",paste(names(tmin_station_list_l)[m],".csv",sep="")))
+      old_data <- read.csv(file.path(path_prms_data,"/prism/Air temperature minimum/",paste(names(tmin_station_list_l)[n],".csv",sep="")))
       old_data$Date <- as.Date(old_data$Date)
       df8$Date <- as.Date(df8$Date)
       old_new_merge <- merge(old_data,
@@ -1585,7 +1585,7 @@ get_prism_data_f <- function(path_gsp_data,
 
 
       write.csv(old_new_merge,
-                file.path(path_prms_data,"/prism/Air temperature minimum/",paste(names(tmin_station_list_l)[m],".csv",sep="")),row.names = F)
+                file.path(path_prms_data,"/prism/Air temperature minimum/",paste(names(tmin_station_list_l)[n],".csv",sep="")),row.names = F)
 
     }
     # ------------------------------------------------------------------------------------------------
@@ -1678,7 +1678,7 @@ get_prism_data_f <- function(path_gsp_data,
     
     # ------------------------------------------------------------------------------------------------
     #if(update_prism_data==F|add_current_stations==T){
-    ppt_stack = pd_stack(prism_archive_subset("tmax","daily",minDate = NULL,maxDate = NULL))
+    tmax_stack = pd_stack(prism_archive_subset("tmax","daily",minDate = NULL,maxDate = NULL))
     # ------------------------------------------------------------------------------------------------
     
     
@@ -1742,13 +1742,13 @@ get_prism_data_f <- function(path_gsp_data,
     if(null_date_flag == T)
     {
 
-      write.csv(df10,file.path(path_prms_data,"/prism/Air temperature maximum/",paste(names(tmax_station_list_l)[m],".csv",sep="")),row.names = F)
+      write.csv(df10,file.path(path_prms_data,"/prism/Air temperature maximum/",paste(names(tmax_station_list_l)[p],".csv",sep="")),row.names = F)
 
     } else {
 
       # ------------------------------------------------------------------------------------------------
       # read old data left join it onto new data to check for where the status has changed
-      old_data <- read.csv(file.path(path_prms_data,"/prism/Air temperature maximum/",paste(names(tmax_station_list_l)[m],".csv",sep="")))
+      old_data <- read.csv(file.path(path_prms_data,"/prism/Air temperature maximum/",paste(names(tmax_station_list_l)[p],".csv",sep="")))
       old_data$Date <- as.Date(old_data$Date)
       df10$Date <- as.Date(df10$Date)
       old_new_merge <- merge(old_data,
@@ -1792,7 +1792,7 @@ get_prism_data_f <- function(path_gsp_data,
 
 
       write.csv(old_new_merge,
-                file.path(path_prms_data,"/prism/Air temperature maximum/",paste(names(tmax_station_list_l)[m],".csv",sep="")),row.names = F)
+                file.path(path_prms_data,"/prism/Air temperature maximum/",paste(names(tmax_station_list_l)[p],".csv",sep="")),row.names = F)
 
     }
     # ------------------------------------------------------------------------------------------------
