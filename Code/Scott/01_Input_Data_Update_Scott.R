@@ -1185,7 +1185,8 @@ get_prism_data_f <- function(path_gsp_data,
   
   
   null_date_flag <- F
-
+  area_name <-str_to_title(area)
+  
   # ------------------------------------------------------------------------------------------------
   # Get station list if file exists, if it doesnt then read it in from prms data, sort by correct stations
   # write it out, then pull the IDs
@@ -1229,224 +1230,226 @@ get_prism_data_f <- function(path_gsp_data,
   # ------------------------------------------------------------------------------------------------
   
   
+
+  start_date="1985-10-01" # Start date that users want
+  end_date <- today() - as.numeric(strsplit(as.character(today()),'-')[[1]][3])
+
   
   
   
   
-  
-  
-  
-  
-# 
-# 
-#   # ------------------------------------------------------------------------------------------------
-#   ##################Precipitation#######################
-#   #dir.create(paste("./outputs/",area,"/prism/Precipitation/",sep=""))
-#   options(prism.path=path_prism_ppt)
-#   # ------------------------------------------------------------------------------------------------
-# 
-# 
-#   # ------------------------------------------------------------------------------------------------
-#   # reading an example file
-#   # if there exists no data then pd stack must be run on entire date set
-#   prism_files <- list.files(file.path(path_prms_data,"/prism/Precipitation/"),
-#                             full.names = TRUE)
-#   if(length(prism_files) > 0)
-#   {
-# 
-#     example_file <- read.csv(prism_files[1])
-#     rle <- rle(example_file$Status)
-#     start_date <- example_file$Date[(rle$lengths[rle$values == 'Stable'] + 1)] # start one day after stable period end
-# 
-#   }else{
-#     null_date_flag <- T
-#   }
-#   # ------------------------------------------------------------------------------------------------
-# 
-# 
-# 
-#   # ------------------------------------------------------------------------------------------------
-#   # if theres no csv data then must pd stack entire raster set
-#   if(null_date_flag == T)
-#   {
-# 
-#     # ------------------------------------------------------------------------------------------------
-#     # Initializes the progress bar
-#     max_pb <- 100
-#     pb <- winProgressBar(title = "Windows progress bar", # Window title
-#                          label = "Percentage completed", # Window label
-#                          min = 0,      # Minimum value of the bar
-#                          max = max_pb, # Maximum value of the bar
-#                          initial = 0,  # Initial value of the bar
-#                          width = 300L) # Width of the window
-#     pb_partition <- round(3/100,0)
-#     pb_start <- 0
-#     # ------------------------------------------------------------------------------------------------
-# 
-# 
-# 
-#     # ------------------------------------------------------------------------------------------------
-#     pctg <- paste('PRISM PD Stack for Precipitation (1 hour +)')
-#     setWinProgressBar(pb,
-#                       0,
-#                       label = pctg)
-#     # ------------------------------------------------------------------------------------------------
-# 
-# 
-#     # ------------------------------------------------------------------------------------------------
-#     #if(update_prism_data==F|add_current_stations==T){
-#     ppt_stack = pd_stack(prism_archive_subset("ppt","daily",minDate = NULL,maxDate = NULL))
-#     # ------------------------------------------------------------------------------------------------
-# 
-# 
-#     # ------------------------------------------------------------------------------------------------
-#     setWinProgressBar(pb,
-#                       100,
-#                       label = pctg)
-#     # ------------------------------------------------------------------------------------------------
-#     close(pb)
-#   # ------------------------------------------------------------------------------------------------
-#   # Otherwise the pd stack can be run only on a subset of dates
-#   } else{
-# 
-#     # ------------------------------------------------------------------------------------------------
-#     #if(update_prism_data==F|add_current_stations==T){
-#     ppt_stack = pd_stack(prism_archive_subset("ppt","daily",minDate = start_date, maxDate = end_date))
-#     # ------------------------------------------------------------------------------------------------
-# 
-#   }
-#   # ------------------------------------------------------------------------------------------------
-# 
-# 
-#   # ------------------------------------------------------------------------------------------------
-#   #save(ppt_stack,file=paste0(path_gsp_data,"outputs/",area,"/prism/","ppt_stack.RData"))
-#   ppt_station_list = raster::extract(ppt_stack, station_list_prism)
-#   colnames(ppt_station_list)=gsub("_bil","",colnames(ppt_station_list))
-#   colnames(ppt_station_list)=gsub("PRISM_ppt_stable_4kmD2_","D_",colnames(ppt_station_list))
-#   ppt_station_list=data.frame(ppt_station_list)
-#   ppt_station_list=cbind.data.frame(StationID=station_list$StationID,station_list_prism,ppt_station_list)
-#   rownames(ppt_station_list)=1:nrow(ppt_station_list)
-#   # ------------------------------------------------------------------------------------------------
-# 
-# 
-#   # ------------------------------------------------------------------------------------------------
-#   # Initializes the progress bar
-#   max_pb <- 100
-#   pb <- winProgressBar(title = "Windows progress bar", # Window title
-#                        label = "Percentage completed", # Window label
-#                        min = 0,      # Minimum value of the bar
-#                        max = max_pb, # Maximum value of the bar
-#                        initial = 0,  # Initial value of the bar
-#                        width = 500L) # Width of the window
-#   pb_partition <- round(1/3,2)
-#   pb_start <- 0
-#   # ------------------------------------------------------------------------------------------------
-# 
-# 
-#   # ------------------------------------------------------------------------------------------------
-#   ppt_station_list_l=split(ppt_station_list,ppt_station_list$StationID)
-#   for (m in 1:length(ppt_station_list_l)){
-#     df7=ppt_station_list_l[[m]]
-#     df7=subset(df7,select=-c(StationID,Longitude,Latitude))
-#     df7=t(df7)
-#     df7=cbind.data.frame(rownames(df7),df7)
-#     colnames(df7)=c("Date","Prcp_mm")
-#     df7 = df7 %>%
-#       mutate(Status=case_when(
-#         str_detect(Date, "PRISM_ppt_early_4kmD2_") ~ "Early",
-#         str_detect(Date, "PRISM_ppt_provisional_4kmD2_") ~ "Provisional",
-#         str_detect(Date, "D_") ~ "Stable",
-#         TRUE ~ Date)) %>%
-#       dplyr::mutate(Station = ppt_station_list_l[[m]]$StationID)
-#     df7$Date=gsub("D_","",df7$Date)
-#     df7$Date=gsub("PRISM_ppt_early_4kmD2_","",df7$Date)
-#     df7$Date=gsub("PRISM_ppt_provisional_4kmD2_","",df7$Date)
-#     df7$Date=as.Date(df7$Date,format="%Y%m%d")
-#     rownames(df7)=1:nrow(df7)
-#     df7=df7[order(df7$Date),]
-# 
-# 
-#     # ------------------------------------------------------------------------------------------------
-#     # if theres no data write it all out, if not download what already exists and replace and extend data
-#     if(null_date_flag == T)
-#     {
-# 
-#       write.csv(df7,file.path(path_prms_data,"/prism/Precipitation/",paste(names(ppt_station_list_l)[m],".csv",sep="")),row.names = F)
-# 
-#     } else {
-# 
-#       # ------------------------------------------------------------------------------------------------
-#       # read old data left join it onto new data to check for where the status has changed
-#       old_data <- read.csv(file.path(path_prms_data,"/prism/Precipitation/",paste(names(ppt_station_list_l)[m],".csv",sep="")))
-#       old_data$Date <- as.Date(old_data$Date)
-#       df7$Date <- as.Date(df7$Date)
-#       old_new_merge <- merge(old_data,
-#                              df7,
-#                              by = 'Date',
-#                              all.x = T)
-#       # ------------------------------------------------------------------------------------------------
-# 
-# 
-# 
-#       # ------------------------------------------------------------------------------------------------
-#       # where has the status changed
-#       unequal_indices <- which(old_new_merge$Status.x != old_new_merge$Status.y)
-# 
-#       if(length(unequal_indices > 0))
-#       {
-#         old_new_merge$Status.x[unequal_indices] <- old_new_merge$Status.y[unequal_indices] # replace any unequal statuses
-#         old_new_merge$Prcp_mm.x[unequal_indices] <- old_new_merge$Prcp_mm.y[unequal_indices] # replace precip values
-# 
-#       }
-# 
-#       old_new_merge <- old_new_merge[,(1:4)] # get rid of merged data
-#       colnames(old_new_merge) <- c('Date','Prcp_mm','Status','Station')
-#       last_date <- old_new_merge$Date[nrow(old_new_merge)]
-#       start_rbind <- which(df7$Date == last_date)
-#       # ------------------------------------------------------------------------------------------------
-# 
-# 
-# 
-#       # ------------------------------------------------------------------------------------------------
-#       # if theres actually anything to rbind that wont throw a NA
-#       if(length(start_rbind) > 0)
-#       {
-#         if(nrow(df7) > start_rbind + 1)
-#         {
-#           old_new_merge <- rbind(old_new_merge,
-#                                  df7[((start_rbind+1):nrow(df7)),])
-#         } else{}
-#       }else{}
-#       # ------------------------------------------------------------------------------------------------
-# 
-# 
-#       write.csv(old_new_merge,
-#                 file.path(path_prms_data,"/prism/Precipitation/",paste(names(ppt_station_list_l)[m],".csv",sep="")),row.names = F)
-# 
-#     }
-#     # ------------------------------------------------------------------------------------------------
-# 
-# 
-# 
-#     # ------------------------------------------------------------------------------------------------
-#     # Update progress bar
-#     pctg <- paste(round((pb_start + (m/length(ppt_station_list_l) *pb_partition))*100, 0),
-#                   "% completed for PRISM in",
-#                   paste(area_name,'.',sep = ''),
-#                   'Currently Processing:',
-#                   '\'',
-#                   'Precip',
-#                   '\'')
-#     setWinProgressBar(pb,
-#                       round((pb_start + (m/length(ppt_station_list_l) *pb_partition))*100, 0),
-#                       label = pctg)
-#     # ------------------------------------------------------------------------------------------------
-#   }
-#   # ------------------------------------------------------------------------------------------------
-#   pb_start <- pb_start + pb_partition
-#   
-  
-  
+
+
+
+
+  # ------------------------------------------------------------------------------------------------
+  ##################Precipitation#######################
+  #dir.create(paste("./outputs/",area,"/prism/Precipitation/",sep=""))
+  options(prism.path=path_prism_ppt)
+  # ------------------------------------------------------------------------------------------------
+
+
+  # ------------------------------------------------------------------------------------------------
+  # reading an example file
+  # if there exists no data then pd stack must be run on entire date set
+  prism_files <- list.files(file.path(path_prms_data,"/prism/Precipitation/"),
+                            full.names = TRUE)
+  if(length(prism_files) > 0)
+  {
+
+    example_file <- read.csv(prism_files[1])
+    rle <- rle(example_file$Status)
+    start_date <- example_file$Date[(rle$lengths[rle$values == 'Stable'] + 1)] # start one day after stable period end
+
+  }else{
+    null_date_flag <- T
+  }
+  # ------------------------------------------------------------------------------------------------
+
+
+
+  # ------------------------------------------------------------------------------------------------
+  # if theres no csv data then must pd stack entire raster set
+  if(null_date_flag == T)
+  {
+
+    # ------------------------------------------------------------------------------------------------
+    # Initializes the progress bar
+    max_pb <- 100
+    pb <- winProgressBar(title = "Windows progress bar", # Window title
+                         label = "Percentage completed", # Window label
+                         min = 0,      # Minimum value of the bar
+                         max = max_pb, # Maximum value of the bar
+                         initial = 0,  # Initial value of the bar
+                         width = 300L) # Width of the window
+    pb_partition <- round(3/100,0)
+    pb_start <- 0
+    # ------------------------------------------------------------------------------------------------
+
+
+
+    # ------------------------------------------------------------------------------------------------
+    pctg <- paste('PRISM PD Stack for Precipitation (1 hour +)')
+    setWinProgressBar(pb,
+                      0,
+                      label = pctg)
+    # ------------------------------------------------------------------------------------------------
+
+
+    # ------------------------------------------------------------------------------------------------
+    #if(update_prism_data==F|add_current_stations==T){
+    ppt_stack = pd_stack(prism_archive_subset("ppt","daily",minDate = NULL,maxDate = NULL))
+    # ------------------------------------------------------------------------------------------------
+
+
+    # ------------------------------------------------------------------------------------------------
+    setWinProgressBar(pb,
+                      100,
+                      label = pctg)
+    # ------------------------------------------------------------------------------------------------
+    close(pb)
+  # ------------------------------------------------------------------------------------------------
+  # Otherwise the pd stack can be run only on a subset of dates
+  } else{
+
+    # ------------------------------------------------------------------------------------------------
+    #if(update_prism_data==F|add_current_stations==T){
+    ppt_stack = pd_stack(prism_archive_subset("ppt","daily",minDate = start_date, maxDate = end_date))
+    # ------------------------------------------------------------------------------------------------
+
+  }
+  # ------------------------------------------------------------------------------------------------
+
+
+  # ------------------------------------------------------------------------------------------------
+  #save(ppt_stack,file=paste0(path_gsp_data,"outputs/",area,"/prism/","ppt_stack.RData"))
+  ppt_station_list = raster::extract(ppt_stack, station_list_prism)
+  colnames(ppt_station_list)=gsub("_bil","",colnames(ppt_station_list))
+  colnames(ppt_station_list)=gsub("PRISM_ppt_stable_4kmD2_","D_",colnames(ppt_station_list))
+  ppt_station_list=data.frame(ppt_station_list)
+  ppt_station_list=cbind.data.frame(StationID=station_list$StationID,station_list_prism,ppt_station_list)
+  rownames(ppt_station_list)=1:nrow(ppt_station_list)
+  # ------------------------------------------------------------------------------------------------
+
+
+  # ------------------------------------------------------------------------------------------------
+  # Initializes the progress bar
+  max_pb <- 100
+  pb <- winProgressBar(title = "Windows progress bar", # Window title
+                       label = "Percentage completed", # Window label
+                       min = 0,      # Minimum value of the bar
+                       max = max_pb, # Maximum value of the bar
+                       initial = 0,  # Initial value of the bar
+                       width = 500L) # Width of the window
+  pb_partition <- round(1/3,2)
+  pb_start <- 0
+  # ------------------------------------------------------------------------------------------------
+
+
+  # ------------------------------------------------------------------------------------------------
+  ppt_station_list_l=split(ppt_station_list,ppt_station_list$StationID)
+  for (m in 1:length(ppt_station_list_l)){
+    df7=ppt_station_list_l[[m]]
+    df7=subset(df7,select=-c(StationID,Longitude,Latitude))
+    df7=t(df7)
+    df7=cbind.data.frame(rownames(df7),df7)
+    colnames(df7)=c("Date","Prcp_mm")
+    df7 = df7 %>%
+      mutate(Status=case_when(
+        str_detect(Date, "PRISM_ppt_early_4kmD2_") ~ "Early",
+        str_detect(Date, "PRISM_ppt_provisional_4kmD2_") ~ "Provisional",
+        str_detect(Date, "D_") ~ "Stable",
+        TRUE ~ Date)) %>%
+      dplyr::mutate(Station = ppt_station_list_l[[m]]$StationID)
+    df7$Date=gsub("D_","",df7$Date)
+    df7$Date=gsub("PRISM_ppt_early_4kmD2_","",df7$Date)
+    df7$Date=gsub("PRISM_ppt_provisional_4kmD2_","",df7$Date)
+    df7$Date=as.Date(df7$Date,format="%Y%m%d")
+    rownames(df7)=1:nrow(df7)
+    df7=df7[order(df7$Date),]
+
+
+    # ------------------------------------------------------------------------------------------------
+    # if theres no data write it all out, if not download what already exists and replace and extend data
+    if(null_date_flag == T)
+    {
+
+      write.csv(df7,file.path(path_prms_data,"/prism/Precipitation/",paste(names(ppt_station_list_l)[m],".csv",sep="")),row.names = F)
+
+    } else {
+
+      # ------------------------------------------------------------------------------------------------
+      # read old data left join it onto new data to check for where the status has changed
+      old_data <- read.csv(file.path(path_prms_data,"/prism/Precipitation/",paste(names(ppt_station_list_l)[m],".csv",sep="")))
+      old_data$Date <- as.Date(old_data$Date)
+      df7$Date <- as.Date(df7$Date)
+      old_new_merge <- merge(old_data,
+                             df7,
+                             by = 'Date',
+                             all.x = T)
+      # ------------------------------------------------------------------------------------------------
+
+
+
+      # ------------------------------------------------------------------------------------------------
+      # where has the status changed
+      unequal_indices <- which(old_new_merge$Status.x != old_new_merge$Status.y)
+
+      if(length(unequal_indices > 0))
+      {
+        old_new_merge$Status.x[unequal_indices] <- old_new_merge$Status.y[unequal_indices] # replace any unequal statuses
+        old_new_merge$Prcp_mm.x[unequal_indices] <- old_new_merge$Prcp_mm.y[unequal_indices] # replace precip values
+
+      }
+
+      old_new_merge <- old_new_merge[,(1:4)] # get rid of merged data
+      colnames(old_new_merge) <- c('Date','Prcp_mm','Status','Station')
+      last_date <- old_new_merge$Date[nrow(old_new_merge)]
+      start_rbind <- which(df7$Date == last_date)
+      # ------------------------------------------------------------------------------------------------
+
+
+
+      # ------------------------------------------------------------------------------------------------
+      # if theres actually anything to rbind that wont throw a NA
+      if(length(start_rbind) > 0)
+      {
+        if(nrow(df7) > start_rbind + 1)
+        {
+          old_new_merge <- rbind(old_new_merge,
+                                 df7[((start_rbind+1):nrow(df7)),])
+        } else{}
+      }else{}
+      # ------------------------------------------------------------------------------------------------
+
+
+      write.csv(old_new_merge,
+                file.path(path_prms_data,"/prism/Precipitation/",paste(names(ppt_station_list_l)[m],".csv",sep="")),row.names = F)
+
+    }
+    # ------------------------------------------------------------------------------------------------
+
+
+
+    # ------------------------------------------------------------------------------------------------
+    # Update progress bar
+    pctg <- paste(round((pb_start + (m/length(ppt_station_list_l) *pb_partition))*100, 0),
+                  "% completed for PRISM in",
+                  paste(area_name,'.',sep = ''),
+                  'Currently Processing:',
+                  '\'',
+                  'Precip',
+                  '\'')
+    setWinProgressBar(pb,
+                      round((pb_start + (m/length(ppt_station_list_l) *pb_partition))*100, 0),
+                      label = pctg)
+    # ------------------------------------------------------------------------------------------------
+  }
+  # ------------------------------------------------------------------------------------------------
+  pb_start <- pb_start + pb_partition
+
+
+
   
   
   
@@ -1532,8 +1535,6 @@ get_prism_data_f <- function(path_gsp_data,
   # ------------------------------------------------------------------------------------------------
 
   
-  
-  
   # ------------------------------------------------------------------------------------------------
   # if(update_prism_data==F|add_current_stations==T){
   tmin_station_list = raster::extract(tmin_stack, station_list_prism)
@@ -1542,6 +1543,20 @@ get_prism_data_f <- function(path_gsp_data,
   tmin_station_list=data.frame(tmin_station_list)
   tmin_station_list=cbind.data.frame(StationID=station_list$StationID,station_list_prism,tmin_station_list)
   rownames(tmin_station_list)=1:nrow(tmin_station_list)
+  # ------------------------------------------------------------------------------------------------
+  
+  
+  # ------------------------------------------------------------------------------------------------
+  # Initializes the progress bar
+  max_pb <- 100
+  pb <- winProgressBar(title = "Windows progress bar", # Window title
+                       label = "Percentage completed", # Window label
+                       min = 0,      # Minimum value of the bar
+                       max = max_pb, # Maximum value of the bar
+                       initial = 0,  # Initial value of the bar
+                       width = 300L) # Width of the window
+  pb_partition <- round(1/3*100,0)
+  pb_start <- 0
   # ------------------------------------------------------------------------------------------------
   
   
@@ -1646,8 +1661,10 @@ get_prism_data_f <- function(path_gsp_data,
                       round((pb_start + (n/length(tmin_station_list_l) *pb_partition))*100, 0),
                       label = pctg)
     # ------------------------------------------------------------------------------------------------
+    
   }
   # ------------------------------------------------------------------------------------------------
+  close(pb)
   pb_start <- pb_start + pb_partition
   
   
@@ -1740,7 +1757,6 @@ get_prism_data_f <- function(path_gsp_data,
   }
   # ------------------------------------------------------------------------------------------------
   
-
   
   # ------------------------------------------------------------------------------------------------
   #    if(update_prism_data==F|add_current_stations==T){
@@ -1752,6 +1768,19 @@ get_prism_data_f <- function(path_gsp_data,
   rownames(tmax_station_list)=1:nrow(tmax_station_list)
   # ------------------------------------------------------------------------------------------------
   
+  
+  # ------------------------------------------------------------------------------------------------
+  # Initializes the progress bar
+  max_pb <- 100
+  pb <- winProgressBar(title = "Windows progress bar", # Window title
+                       label = "Percentage completed", # Window label
+                       min = 0,      # Minimum value of the bar
+                       max = max_pb, # Maximum value of the bar
+                       initial = 0,  # Initial value of the bar
+                       width = 300L) # Width of the window
+  pb_partition <- round(1/3*100,0)
+  pb_start <- 0
+  # ------------------------------------------------------------------------------------------------
   
   
   # ------------------------------------------------------------------------------------------------

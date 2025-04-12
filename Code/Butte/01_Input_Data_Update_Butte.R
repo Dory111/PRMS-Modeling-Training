@@ -1168,6 +1168,7 @@ get_prism_data_f <- function(path_gsp_data,
   
   
   null_date_flag <- F
+  area_name <-str_to_title(area)
   
   # ------------------------------------------------------------------------------------------------
   # Station list
@@ -1505,6 +1506,21 @@ get_prism_data_f <- function(path_gsp_data,
   # ------------------------------------------------------------------------------------------------
   
   
+  
+  # ------------------------------------------------------------------------------------------------
+  # Initializes the progress bar
+  max_pb <- 100
+  pb <- winProgressBar(title = "Windows progress bar", # Window title
+                       label = "Percentage completed", # Window label
+                       min = 0,      # Minimum value of the bar
+                       max = max_pb, # Maximum value of the bar
+                       initial = 0,  # Initial value of the bar
+                       width = 500L) # Width of the window
+  pb_partition <- round(1/3,2)
+  pb_start <- 0
+  # ------------------------------------------------------------------------------------------------
+  
+  
   # ------------------------------------------------------------------------------------------------
   tmin_station_list_l=split(tmin_station_list,tmin_station_list$StationID)
   for (n in 1:length(tmin_station_list_l)){
@@ -1712,6 +1728,19 @@ get_prism_data_f <- function(path_gsp_data,
   rownames(tmax_station_list)=1:nrow(tmax_station_list)
   # ------------------------------------------------------------------------------------------------
   
+  
+  # ------------------------------------------------------------------------------------------------
+  # Initializes the progress bar
+  max_pb <- 100
+  pb <- winProgressBar(title = "Windows progress bar", # Window title
+                       label = "Percentage completed", # Window label
+                       min = 0,      # Minimum value of the bar
+                       max = max_pb, # Maximum value of the bar
+                       initial = 0,  # Initial value of the bar
+                       width = 500L) # Width of the window
+  pb_partition <- round(1/3,2)
+  pb_start <- 0
+  # ------------------------------------------------------------------------------------------------
   
   
   # ------------------------------------------------------------------------------------------------
