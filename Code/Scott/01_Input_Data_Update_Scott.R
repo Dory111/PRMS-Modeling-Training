@@ -109,111 +109,111 @@ get_gsp_data_f <- function(
 
 
 
-
-  # ------------------------------------------------------------------------------------------------
-  ##### Download NWIS data #####
-  if(run_nwis_data==F){}else{
-
-    get_nwis_data_f(path_gsp_data,
-                    path_prms_data,
-                    area,
-                    start_date,
-                    end_date)
-  }
-  # ------------------------------------------------------------------------------------------------
-
-
-
-
-
-  # ------------------------------------------------------------------------------------------------
-  ##### Download CIMIS data #####
-  # Requires CIMIS Token
-  # (free online: https://cimis.water.ca.gov/)
-  if (run_cimis_data==T){
-
-    get_cimis_data_f(path_gsp_data,
-                     path_prms_data,
-                     area,
-                     start_date,
-                     end_date)
-
-
-  } else {}
-  # ------------------------------------------------------------------------------------------------
-
-
-
-
-  # ------------------------------------------------------------------------------------------------
-  ##### Download NOAA data #####
-  # Weather data requires NOAA CDO token
-  # (free online: https://www.ncdc.noaa.gov/cdo-web/webservices/v2)
-  if(run_noaa_data==F){}else{
-
-    get_noaa_data_f(run_noaa_data,
-                    path_gsp_data,
-                    path_prms_data,
-                    area,
-                    start_date,
-                    end_date)
-    remove_temporary_noaa_f(path_prms_data)
-  }
-  # ------------------------------------------------------------------------------------------------
-
-
-
-
-  # ------------------------------------------------------------------------------------------------
-  ##### Download NRCS data #####
-  ## Not being added to summary lists yet ##
-  if (get_nrcs_data==T & area=="butte"){
-
-    get_nrcs_data_f(path_gsp_data,
-                    path_prms_data,
-                    area,
-                    start_date,
-                    end_date)
-
-  } else {}
-  # ------------------------------------------------------------------------------------------------
-
-
-
-
-  # ------------------------------------------------------------------------------------------------
-  ##### Combine CDEC, NWIS, CIMIS, NOAA data #####
-  flag_cdec=file.exists(file.path(path_prms_data,"cdec/cdec_download_data_summary.csv"))
-  flag_nwis=file.exists(file.path(path_prms_data,"nwis/nwis_download_data_summary.csv"))
-  flag_cimis=file.exists(file.path(path_prms_data,"cimis/cimis_download_data_summary.csv"))
-  flag_noaa=file.exists(file.path(path_prms_data,"noaa/noaa_download_data_summary.csv"))
-  
-  if(flag_cdec==T&flag_nwis==T&flag_cimis==T&flag_noaa==T){
-    cdec_download_data_summary=read.csv(file.path(path_prms_data,"cdec/cdec_download_data_summary.csv"))
-    nwis_download_data_summary=read.csv(file.path(path_prms_data,"nwis/nwis_download_data_summary.csv"))
-    cimis_download_data_summary=read.csv(file.path(path_prms_data,"cimis/cimis_download_data_summary.csv"))
-    noaa_download_data_summary=read.csv(file.path(path_prms_data,"noaa/noaa_download_data_summary.csv"))
-    
-    # download_data_summary=rbind.data.frame(cdec_download_data_summary,nwis_download_data_summary,
-    #                                        cimis_download_data_summary, noaa_download_data_summary)
-    # write.csv(download_data_summary,file.path(path_gsp_data,"outputs",area,"download_data_summary.csv"),row.names = F)
-  } else {}
-  # ------------------------------------------------------------------------------------------------
-
-
-
-
-  # ------------------------------------------------------------------------------------------------
-  if(get_prism_data==T){
-
-    get_prism_data_f(path_gsp_data,
-                     path_prms_data,
-                     path_shared_data,
-                     start_date,
-                     end_date)
-
-  } else {}
-  # ------------------------------------------------------------------------------------------------
+# 
+#   # ------------------------------------------------------------------------------------------------
+#   ##### Download NWIS data #####
+#   if(run_nwis_data==F){}else{
+# 
+#     get_nwis_data_f(path_gsp_data,
+#                     path_prms_data,
+#                     area,
+#                     start_date,
+#                     end_date)
+#   }
+#   # ------------------------------------------------------------------------------------------------
+# 
+# 
+# 
+# 
+# 
+#   # ------------------------------------------------------------------------------------------------
+#   ##### Download CIMIS data #####
+#   # Requires CIMIS Token
+#   # (free online: https://cimis.water.ca.gov/)
+#   if (run_cimis_data==T){
+# 
+#     get_cimis_data_f(path_gsp_data,
+#                      path_prms_data,
+#                      area,
+#                      start_date,
+#                      end_date)
+# 
+# 
+#   } else {}
+#   # ------------------------------------------------------------------------------------------------
+# 
+# 
+# 
+# 
+#   # ------------------------------------------------------------------------------------------------
+#   ##### Download NOAA data #####
+#   # Weather data requires NOAA CDO token
+#   # (free online: https://www.ncdc.noaa.gov/cdo-web/webservices/v2)
+#   if(run_noaa_data==F){}else{
+# 
+#     get_noaa_data_f(run_noaa_data,
+#                     path_gsp_data,
+#                     path_prms_data,
+#                     area,
+#                     start_date,
+#                     end_date)
+#     remove_temporary_noaa_f(path_prms_data)
+#   }
+#   # ------------------------------------------------------------------------------------------------
+# 
+# 
+# 
+# 
+#   # ------------------------------------------------------------------------------------------------
+#   ##### Download NRCS data #####
+#   ## Not being added to summary lists yet ##
+#   if (get_nrcs_data==T & area=="butte"){
+# 
+#     get_nrcs_data_f(path_gsp_data,
+#                     path_prms_data,
+#                     area,
+#                     start_date,
+#                     end_date)
+# 
+#   } else {}
+#   # ------------------------------------------------------------------------------------------------
+# 
+# 
+# 
+# 
+#   # ------------------------------------------------------------------------------------------------
+#   ##### Combine CDEC, NWIS, CIMIS, NOAA data #####
+#   flag_cdec=file.exists(file.path(path_prms_data,"cdec/cdec_download_data_summary.csv"))
+#   flag_nwis=file.exists(file.path(path_prms_data,"nwis/nwis_download_data_summary.csv"))
+#   flag_cimis=file.exists(file.path(path_prms_data,"cimis/cimis_download_data_summary.csv"))
+#   flag_noaa=file.exists(file.path(path_prms_data,"noaa/noaa_download_data_summary.csv"))
+#   
+#   if(flag_cdec==T&flag_nwis==T&flag_cimis==T&flag_noaa==T){
+#     cdec_download_data_summary=read.csv(file.path(path_prms_data,"cdec/cdec_download_data_summary.csv"))
+#     nwis_download_data_summary=read.csv(file.path(path_prms_data,"nwis/nwis_download_data_summary.csv"))
+#     cimis_download_data_summary=read.csv(file.path(path_prms_data,"cimis/cimis_download_data_summary.csv"))
+#     noaa_download_data_summary=read.csv(file.path(path_prms_data,"noaa/noaa_download_data_summary.csv"))
+#     
+#     # download_data_summary=rbind.data.frame(cdec_download_data_summary,nwis_download_data_summary,
+#     #                                        cimis_download_data_summary, noaa_download_data_summary)
+#     # write.csv(download_data_summary,file.path(path_gsp_data,"outputs",area,"download_data_summary.csv"),row.names = F)
+#   } else {}
+#   # ------------------------------------------------------------------------------------------------
+# 
+# 
+# 
+# 
+#   # ------------------------------------------------------------------------------------------------
+#   if(get_prism_data==T){
+# 
+#     get_prism_data_f(path_gsp_data,
+#                      path_prms_data,
+#                      path_shared_data,
+#                      start_date,
+#                      end_date)
+# 
+#   } else {}
+#   # ------------------------------------------------------------------------------------------------
 }
 # ------------------------------------------------------------------------------------------------
 
