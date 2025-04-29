@@ -7,6 +7,7 @@
 get_gsp_data_f('scott',
                path_gsp_data,
                path_prms_data)
+
 # ------------------------------------------------------------------------------------------------
 # Setting location of prms data path and gsp data path
 username=Sys.info()[["user"]]
@@ -18,6 +19,8 @@ path_shared_data <- paste0(dropbox_dir,"00_Project-Repositories/00598-PRMS-Model
 # path_prms_data <- path # "C:/Users/ChristopherDory/LWA Dropbox/00_Project-Repositories/00598-PRMS-Modeling/butte/data/"
 # path_gsp_data <- path # "C:/Users/ChristopherDory/LWA Dropbox/00_Project-Repositories/00598-Siskiyou-GSP-data/"
 # area <- 'butte'
+
+
 
 
 
@@ -93,13 +96,13 @@ get_gsp_data_f <- function(
   ##### Download CDEC data #####
   # if we want to download cdec data
   if(run_cdec_data==F){}else{
-
+    
     get_cdec_data_f(path_gsp_data,
                     path_prms_data,
                     area,
                     start_date,
                     end_date,
-                    F)
+                    download_all = T)
 
   }
   # ------------------------------------------------------------------------------------------------
@@ -147,7 +150,7 @@ get_gsp_data_f <- function(
   # Weather data requires NOAA CDO token
   # (free online: https://www.ncdc.noaa.gov/cdo-web/webservices/v2)
   if(run_noaa_data==F){}else{
-    
+
     get_noaa_data_f(run_noaa_data,
                     path_gsp_data,
                     path_prms_data,
@@ -157,27 +160,27 @@ get_gsp_data_f <- function(
     remove_temporary_noaa_f(path_prms_data)
   }
   # ------------------------------------------------------------------------------------------------
-  
-  
-  
-  
+
+
+
+
   # ------------------------------------------------------------------------------------------------
   ##### Download NRCS data #####
   ## Not being added to summary lists yet ##
   if (get_nrcs_data==T & area=="butte"){
-    
+
     get_nrcs_data_f(path_gsp_data,
                     path_prms_data,
                     area,
                     start_date,
                     end_date)
-    
+
   } else {}
   # ------------------------------------------------------------------------------------------------
-  
-  
-  
-  
+
+
+
+
   # ------------------------------------------------------------------------------------------------
   ##### Combine CDEC, NWIS, CIMIS, NOAA data #####
   flag_cdec=file.exists(file.path(path_prms_data,"cdec/cdec_download_data_summary.csv"))
@@ -196,25 +199,23 @@ get_gsp_data_f <- function(
     # write.csv(download_data_summary,file.path(path_gsp_data,"outputs",area,"download_data_summary.csv"),row.names = F)
   } else {}
   # ------------------------------------------------------------------------------------------------
-  
-  
-  
-  
+
+
+
+
   # ------------------------------------------------------------------------------------------------
   if(get_prism_data==T){
-    
+
     get_prism_data_f(path_gsp_data,
                      path_prms_data,
                      path_shared_data,
                      start_date,
                      end_date)
-    
+
   } else {}
   # ------------------------------------------------------------------------------------------------
 }
 # ------------------------------------------------------------------------------------------------
-
-
 
 
 
@@ -232,6 +233,18 @@ get_cdec_data_f <- function(path_gsp_data,
                             end_date,
                             download_all)
 {
+  
+  options(timeout = 60*60*3) # 3 hour timeout for slow internet connections on cdec
+  
+  
+  # ------------------------------------------------------------------------------------------------
+  # if donly section of date range is being downloaded then it has to be appended
+  if(download_all == T){
+    append_mode <- F
+  } else {
+    append_mode <- T
+  }
+  # ------------------------------------------------------------------------------------------------
   
   
   # ------------------------------------------------------------------------------------------------
@@ -257,7 +270,6 @@ get_cdec_data_f <- function(path_gsp_data,
   durations_list=cbind.data.frame(durations=c("D","H","E","M"),
                                   durations_name=c("","_hourly","_event","_monthly"))
   # ------------------------------------------------------------------------------------------------
-  
   
   
   
@@ -287,7 +299,7 @@ get_cdec_data_f <- function(path_gsp_data,
   } else{ # if data hasnt been downloaded before then must download all
     
     
-   
+    start_date <- '1985-10-01'
     
   }
   # ------------------------------------------------------------------------------------------------
@@ -307,16 +319,15 @@ get_cdec_data_f <- function(path_gsp_data,
   
   # ------------------------------------------------------------------------------------------------
   # cant download dates in reverse, aka no new calendar months completed
-  if(as.Date(end_date) < as.Date(start_date))
+  if(as.Date(end_date) < as.Date(start_date)|
+     as.Date(end_date) == as.Date(start_date))
   {
     
     date_flag <- T
     
-    
   }
   # ------------------------------------------------------------------------------------------------
-  
-  
+
   
   
   # ------------------------------------------------------------------------------------------------
@@ -364,6 +375,7 @@ get_cdec_data_f <- function(path_gsp_data,
       # ------------------------------------------------------------------------------------------------
       # for each sensor station
       for (i in 1:nrow(sensta)){
+        
         variable_code=sensta[i,"variable_code"] # what code is to be loaded
         variable_name=allsensors[match(variable_code,allsensors$variable_code),"variable_name"] # what is the variable name of that code
         unit=allsensors[match(variable_code,allsensors$variable_code),"unit"] # what are the units of the variable
@@ -375,47 +387,134 @@ get_cdec_data_f <- function(path_gsp_data,
         colnames(df3)[5]="Date"
         
         
-        
-      
         # ------------------------------------------------------------------------------------------------
         # If data for that sensor
-        if(nrow(df3)==0){}else{ 
-          
+        if(nrow(df3)==0){}else{
+          print(file.path(path_prms_data,"cdec",variable_name,paste(station_id,durations_name,".csv",sep="")))
           # ------------------------------------------------------------------------------------------------
-          # if the file already exists then read it in
-          if(file.exists(file.path(path_prms_data,"cdec",variable_name,paste(station_id,durations_name,".csv",sep=""))))
+          if(append_mode == T)
           {
-            
-            df_orig <- read.csv(file.path(path_prms_data,"cdec",variable_name,paste(station_id,durations_name,".csv",sep="")))
-            df_orig$Date <- as.POSIXct(df_orig$Date, format = '%Y-%m-%d %H:%M:%S')
-            compare_orig <- df_orig$Date %in% df3$Date
-            compare_orig <- which(compare_orig == TRUE)
-            compare_new <- df3$Date %in% df_orig$Date
-            compare_new <- which(compare_new == TRUE)
-            
-           
             # ------------------------------------------------------------------------------------------------
-            # if there are no dates that are the same then rbind them, as the dates dont overlap
-            # however as the last downloaded date should create a continuous record this is fine
-            # otherwise find where they are the same and make sure there are no duplicates
-            if(length(compare_orig) == 0)
+            # if the file already exists then read it in
+            if(file.exists(file.path(path_prms_data,"cdec",variable_name,paste(station_id,durations_name,".csv",sep=""))))
             {
               
-              df3 <- rbind(df_orig,df3)
+              df_orig <- read.csv(file.path(path_prms_data,"cdec",variable_name,paste(station_id,durations_name,".csv",sep="")))
+              colnames <- colnames(df_orig)
               
-            } else {
+              # ------------------------------------------------------------------------------------------------
+              if(!('ObsDate' %in% colnames)){
+                df_orig$ObsDate <- rep(NA,nrow(df_orig))
+              }
+              # ------------------------------------------------------------------------------------------------
               
-              df3 <- df3[-c(compare_new[1]:tail(compare_new,1)), ]
-              df3 <- rbind(df_orig,df3)
+              
+              # ------------------------------------------------------------------------------------------------
+              # are there dates where posixct coercison fails
+              for(j in 1:nrow(df_orig))
+              {
+                
+                year <- year(df_orig$Date[NA_indices[j]])
+                month <- month(df_orig$Date[NA_indices[j]])
+                day <- day(df_orig$Date[NA_indices[j]])
+                hour <- str_pad(hour(df_orig$Date[NA_indices[j]]), width = 2, side = 'left', pad = '0')
+                minute <- str_pad(minute(df_orig$Date[NA_indices[j]]), width = 2, side = 'left', pad = '0')
+                second <- str_pad(second(df_orig$Date[NA_indices[j]]), width = 2, side = 'left', pad = '0')
+                # ------------------------------------------------------------------------------------------------
+                # default to midnight
+                if(is.na(hour) == T|
+                   is.na(minute) == T |
+                   is.na(second) == T){
+                  
+                  hour <- '00'
+                  minute <- '00'
+                  second <- '00'
+                  
+                }
+                # ------------------------------------------------------------------------------------------------
+                df_orig$Date[j] <- as.POSIXct(paste(year,'-',month,'-',day,' ',hour,':',minute,':',second, sep = ''),
+                                              format = '%Y-%m-%d %H:%M:%S')
+              }
+              NA_indices <- which(is.na(df_orig$Date) == TRUE)
+              # ------------------------------------------------------------------------------------------------
+              
+              
+              
+              # ------------------------------------------------------------------------------------------------
+              # for each NA date find which in the backup ObsDate column
+              # try to coerce the obsdate column to correct format
+              # if it doesnt work force to midnight
+              if(length(NA_indices) > 0){
+                
+                
+                # ------------------------------------------------------------------------------------------------
+                for(j in 1:length(NA_indices)){
+                  
+                  tryCatch(
+                    {
+                      year <- year(df_orig$ObsDate[NA_indices[j]])
+                      month <- month(df_orig$ObsDate[NA_indices[j]])
+                      day <- day(df_orig$ObsDate[NA_indices[j]])
+                      hour <- str_pad(hour(df_orig$ObsDate[NA_indices[j]]), width = 2, side = 'left', pad = '0')
+                      minute <- str_pad(minute(df_orig$ObsDate[NA_indices[j]]), width = 2, side = 'left', pad = '0')
+                      second <- str_pad(second(df_orig$ObsDate[NA_indices[j]]), width = 2, side = 'left', pad = '0')
+                      # ------------------------------------------------------------------------------------------------
+                      # default to midnight
+                      if(is.na(hour) == T|
+                         is.na(minute) == T |
+                         is.na(second) == T){
+                        
+                        hour <- '00'
+                        minute <- '00'
+                        second <- '00'
+                        
+                      }
+                      # ------------------------------------------------------------------------------------------------
+                      df_orig$Date[NA_indices[j]] <- as.POSIXct(paste(year,'-',month,'-',day,' ',hour,':',minute,':',second, sep = ''),
+                                                                format = '%Y-%m-%d %H:%M:%S')
+                      
+                    }, error = function(e){
+                      
+                      df_orig$Date[NA_indices[j]] <- as.POSIXct(as.numeric(df_orig$ObsDate[NA_indices[j]]))
+                      
+                    })
+                  
+                }
+                # ------------------------------------------------------------------------------------------------
+              }
+              # ------------------------------------------------------------------------------------------------
+              
+              
+              compare_orig <- df_orig$Date %in% df3$Date
+              compare_orig <- which(compare_orig == TRUE)
+              compare_new <- df3$Date %in% df_orig$Date
+              compare_new <- which(compare_new == TRUE)
+              
+              
+              # ------------------------------------------------------------------------------------------------
+              # if there are no dates that are the same then rbind them, as the dates dont overlap
+              # however as the last downloaded date should create a continuous record this is fine
+              # otherwise find where they are the same and make sure there are no duplicates
+              if(length(compare_orig) == 0)
+              {
+                
+                df3 <- rbind(df_orig,df3)
+                
+              } else {
+                
+                df3 <- df3[-c(compare_new[1]:tail(compare_new,1)), ]
+                df3 <- rbind(df_orig,df3)
+                
+              }
+              # ------------------------------------------------------------------------------------------------
+              
+              
               
             }
             # ------------------------------------------------------------------------------------------------
             
-            
-            
           }
           # ------------------------------------------------------------------------------------------------
-          
           
           # Create output directory
           #dir.create(file.path(path_gsp_data,"outputs",area,"cdec",variable_name))
@@ -426,6 +525,10 @@ get_cdec_data_f <- function(path_gsp_data,
           write.csv(df3,file.path(path_prms_data,"cdec",variable_name,paste(station_id,durations_name,".csv",sep="")),row.names = F)
         }
         # ------------------------------------------------------------------------------------------------
+      
+        
+        
+      
         
         
         # ------------------------------------------------------------------------------------------------
