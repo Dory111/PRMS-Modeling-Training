@@ -7,7 +7,7 @@ library(terra)
 #===========================================================================================
 # Converts cursed format
 #===========================================================================================
-Veg_GDB_to_SHP <- function()
+Veg_GDB_to_SHP <- function(fact = 4)
 { 
 
   #-------------------------------------------------------------------------------
@@ -20,19 +20,19 @@ Veg_GDB_to_SHP <- function()
   
   #-------------------------------------------------------------------------------
   # recommended defaults
-  fact <- 4
+  # fact <- 4
   #-------------------------------------------------------------------------------
   
   
   #-------------------------------------------------------------------------------------------
   # POINT THESE TO THE FVEG GEO DATABASE
   cat('Loading Raster For Value Translation \n\n')
-  raster_for_levels <- raster('C:/Users/ChristopherDory/LWA Dropbox/Christopher Dory/Projects/PRMS-Modeling-Training/Data/fveg22_1.gdb')
+  raster_for_levels <- raster('C:/Users/ChristopherDory/LWA Dropbox/Christopher Dory/Projects/PRMS-Modeling-Training/Data/Input/fveg22_1.gdb')
   raster_for_levels <- crop(raster_for_levels, extent(st_transform(Siskiyou_Watersheds,3310)))
   
   
   cat('Loading Raster For Values \n\n')
-  raster_for_values <- rast('C:/Users/ChristopherDory/LWA Dropbox/Christopher Dory/Projects/PRMS-Modeling-Training/Data/fveg22_1.gdb')
+  raster_for_values <- rast('C:/Users/ChristopherDory/LWA Dropbox/Christopher Dory/Projects/PRMS-Modeling-Training/Data/Input/fveg22_1.gdb')
   raster_for_values <- crop(raster_for_values, extent(st_transform(Siskiyou_Watersheds,3310)))
   
   cat('Aggregating Raster For Values \n\n')
@@ -136,13 +136,15 @@ png(filename=paste("C:/Users/ChristopherDory/LWA Dropbox/Christopher Dory/Projec
                    'Output/Maps/', 'WHR10.png', sep = ''),
     width=12, height=12, units="in", res=300)
 
-read <<- st_read('C:/Users/ChristopherDory/LWA Dropbox/Christopher Dory/Projects/PRMS-Modeling-Training/Data/Scott_WHRALL.shp')
+read <<- st_read('C:/Users/ChristopherDory/LWA Dropbox/Christopher Dory/Projects/PRMS-Modeling-Training/Data/Output/Scott_WHRALL.shp')
 Palette <- sequential_hcl(n = length(unique(read$WHR10)),
                           palette = 'Reds2')
 Palette <- c('#ffe771','#ffdebf','#224539','#236f30','#b2d85f','#798a73','#020608','#2382b2','#00565c')
-read[read != 16] <- NA
+
+
 Palette[as.factor(read$WHR10)]
 plot(st_geometry(read), col = Palette[as.factor(read$WHR10)], border = NA)
+
 
 rgb(as.vector(col2rgb(Palette[9])/255)[1],
     as.vector(col2rgb(Palette[9])/255)[1],

@@ -22,8 +22,6 @@ path_shared_data <- paste0(dropbox_dir,"00_Project-Repositories/00598-PRMS-Model
 
 
 
-
-
 #===========================================================================================
 # get_gsp_data
 #===========================================================================================
@@ -102,122 +100,121 @@ get_gsp_data_f <- function(
                     area,
                     start_date,
                     end_date,
-                    download_all = T)
+                    download_all = F,
+                    year_freq = 5)
 
   }
   # ------------------------------------------------------------------------------------------------
 
 
 
-# 
-#   # ------------------------------------------------------------------------------------------------
-#   ##### Download NWIS data #####
-#   if(run_nwis_data==F){}else{
-# 
-#     get_nwis_data_f(path_gsp_data,
-#                     path_prms_data,
-#                     area,
-#                     start_date,
-#                     end_date)
-#   }
-#   # ------------------------------------------------------------------------------------------------
-# 
-# 
-# 
-# 
-# 
-#   # ------------------------------------------------------------------------------------------------
-#   ##### Download CIMIS data #####
-#   # Requires CIMIS Token
-#   # (free online: https://cimis.water.ca.gov/)
-#   if (run_cimis_data==T){
-# 
-#     get_cimis_data_f(path_gsp_data,
-#                      path_prms_data,
-#                      area,
-#                      start_date,
-#                      end_date)
-# 
-# 
-#   } else {}
-#   # ------------------------------------------------------------------------------------------------
-# 
-# 
-# 
-# 
-#   # ------------------------------------------------------------------------------------------------
-#   ##### Download NOAA data #####
-#   # Weather data requires NOAA CDO token
-#   # (free online: https://www.ncdc.noaa.gov/cdo-web/webservices/v2)
-#   if(run_noaa_data==F){}else{
-# 
-#     get_noaa_data_f(run_noaa_data,
-#                     path_gsp_data,
-#                     path_prms_data,
-#                     area,
-#                     start_date,
-#                     end_date)
-#     remove_temporary_noaa_f(path_prms_data)
-#   }
-#   # ------------------------------------------------------------------------------------------------
-# 
-# 
-# 
-# 
-#   # ------------------------------------------------------------------------------------------------
-#   ##### Download NRCS data #####
-#   ## Not being added to summary lists yet ##
-#   if (get_nrcs_data==T & area=="butte"){
-# 
-#     get_nrcs_data_f(path_gsp_data,
-#                     path_prms_data,
-#                     area,
-#                     start_date,
-#                     end_date)
-# 
-#   } else {}
-#   # ------------------------------------------------------------------------------------------------
-# 
-# 
-# 
-# 
-#   # ------------------------------------------------------------------------------------------------
-#   ##### Combine CDEC, NWIS, CIMIS, NOAA data #####
-#   flag_cdec=file.exists(file.path(path_prms_data,"cdec/cdec_download_data_summary.csv"))
-#   flag_nwis=file.exists(file.path(path_prms_data,"nwis/nwis_download_data_summary.csv"))
-#   flag_cimis=file.exists(file.path(path_prms_data,"cimis/cimis_download_data_summary.csv"))
-#   flag_noaa=file.exists(file.path(path_prms_data,"noaa/noaa_download_data_summary.csv"))
-#   
-#   if(flag_cdec==T&flag_nwis==T&flag_cimis==T&flag_noaa==T){
-#     cdec_download_data_summary=read.csv(file.path(path_prms_data,"cdec/cdec_download_data_summary.csv"))
-#     nwis_download_data_summary=read.csv(file.path(path_prms_data,"nwis/nwis_download_data_summary.csv"))
-#     cimis_download_data_summary=read.csv(file.path(path_prms_data,"cimis/cimis_download_data_summary.csv"))
-#     noaa_download_data_summary=read.csv(file.path(path_prms_data,"noaa/noaa_download_data_summary.csv"))
-#     
-#     # download_data_summary=rbind.data.frame(cdec_download_data_summary,nwis_download_data_summary,
-#     #                                        cimis_download_data_summary, noaa_download_data_summary)
-#     # write.csv(download_data_summary,file.path(path_gsp_data,"outputs",area,"download_data_summary.csv"),row.names = F)
-#   } else {}
-#   # ------------------------------------------------------------------------------------------------
-# 
-# 
-# 
-# 
-#   # ------------------------------------------------------------------------------------------------
-#   if(get_prism_data==T){
-# 
-#     get_prism_data_f(path_gsp_data,
-#                      path_prms_data,
-#                      path_shared_data,
-#                      start_date,
-#                      end_date)
-# 
-#   } else {}
-#   # ------------------------------------------------------------------------------------------------
+
+  # ------------------------------------------------------------------------------------------------
+  ##### Download NWIS data #####
+  if(run_nwis_data==F){}else{
+
+    get_nwis_data_f(path_gsp_data,
+                    path_prms_data,
+                    area,
+                    start_date,
+                    end_date)
+  }
+  # ------------------------------------------------------------------------------------------------
+
+
+
+
+
+  # ------------------------------------------------------------------------------------------------
+  ##### Download CIMIS data #####
+  # Requires CIMIS Token
+  # (free online: https://cimis.water.ca.gov/)
+  if (run_cimis_data==T){
+
+    get_cimis_data_f(path_gsp_data,
+                     path_prms_data,
+                     area,
+                     start_date,
+                     end_date)
+
+
+  } else {}
+  # ------------------------------------------------------------------------------------------------
+
+
+
+
+  # ------------------------------------------------------------------------------------------------
+  ##### Download NOAA data #####
+  # Weather data requires NOAA CDO token
+  # (free online: https://www.ncdc.noaa.gov/cdo-web/webservices/v2)
+  if(run_noaa_data==F){}else{
+
+    get_noaa_data_f(run_noaa_data,
+                    path_gsp_data,
+                    path_prms_data,
+                    area,
+                    start_date,
+                    end_date)
+    remove_temporary_noaa_f(path_prms_data)
+  }
+  # ------------------------------------------------------------------------------------------------
+
+
+
+
+  # ------------------------------------------------------------------------------------------------
+  ##### Download NRCS data #####
+  ## Not being added to summary lists yet ##
+  if (get_nrcs_data==T & area=="butte"){
+
+    get_nrcs_data_f(path_gsp_data,
+                    path_prms_data,
+                    area,
+                    start_date,
+                    end_date)
+
+  } else {}
+  # ------------------------------------------------------------------------------------------------
+
+
+
+
+  # ------------------------------------------------------------------------------------------------
+  ##### Combine CDEC, NWIS, CIMIS, NOAA data #####
+  flag_cdec=file.exists(file.path(path_prms_data,"cdec/cdec_download_data_summary.csv"))
+  flag_nwis=file.exists(file.path(path_prms_data,"nwis/nwis_download_data_summary.csv"))
+  flag_cimis=file.exists(file.path(path_prms_data,"cimis/cimis_download_data_summary.csv"))
+  flag_noaa=file.exists(file.path(path_prms_data,"noaa/noaa_download_data_summary.csv"))
+
+  if(flag_cdec==T&flag_nwis==T&flag_cimis==T&flag_noaa==T){
+    cdec_download_data_summary=read.csv(file.path(path_prms_data,"cdec/cdec_download_data_summary.csv"))
+    nwis_download_data_summary=read.csv(file.path(path_prms_data,"nwis/nwis_download_data_summary.csv"))
+    cimis_download_data_summary=read.csv(file.path(path_prms_data,"cimis/cimis_download_data_summary.csv"))
+    noaa_download_data_summary=read.csv(file.path(path_prms_data,"noaa/noaa_download_data_summary.csv"))
+
+    # download_data_summary=rbind.data.frame(cdec_download_data_summary,nwis_download_data_summary,
+    #                                        cimis_download_data_summary, noaa_download_data_summary)
+    # write.csv(download_data_summary,file.path(path_gsp_data,"outputs",area,"download_data_summary.csv"),row.names = F)
+  } else {}
+  # ------------------------------------------------------------------------------------------------
+
+
+
+
+  # ------------------------------------------------------------------------------------------------
+  if(get_prism_data==T){
+
+    get_prism_data_f(path_gsp_data,
+                     path_prms_data,
+                     path_shared_data,
+                     start_date,
+                     end_date)
+
+  } else {}
+  # ------------------------------------------------------------------------------------------------
 }
 # ------------------------------------------------------------------------------------------------
-
-
 
 
 
@@ -231,22 +228,13 @@ get_cdec_data_f <- function(path_gsp_data,
                             area,
                             start_date,
                             end_date,
-                            download_all)
+                            download_all,
+                            year_freq)
 {
   
   options(timeout = 60*60*3) # 3 hour timeout for slow internet connections on cdec
   
-  
-  # ------------------------------------------------------------------------------------------------
-  # if donly section of date range is being downloaded then it has to be appended
-  if(download_all == T){
-    append_mode <- F
-  } else {
-    append_mode <- T
-  }
-  # ------------------------------------------------------------------------------------------------
-  
-  
+
   # ------------------------------------------------------------------------------------------------
   # Load the list of sensors
   allsensors=read.csv(paste(path_gsp_data,"inputs/list of sensors in CDEC.csv",sep="")) # https://cdec.water.ca.gov/misc/senslist.html
@@ -328,98 +316,221 @@ get_cdec_data_f <- function(path_gsp_data,
   }
   # ------------------------------------------------------------------------------------------------
 
+
+  # ------------------------------------------------------------------------------------------------
+  # sets sequences of dates to be iterated over
+  date_seq <- seq(from = year(start_date),
+                  to = year(end_date),
+                  by = year_freq)
+  date_seq <- as.character(date_seq)
+  if(tail(date_seq,1) != as.character(year(today()))){
+    date_seq <- append(date_seq, as.character(year(today())))
+  }
+  date_seq <- paste0(date_seq,'-10-01')
+  date_seq[length(date_seq)] <- as.character(end_date)
+  # ------------------------------------------------------------------------------------------------
   
   
   # ------------------------------------------------------------------------------------------------
   if(date_flag == F)
   {
     pb_start <- 0
-    pb_partition <- 1/nrow(durations_list)
-    
-    for(d in 1:nrow(durations_list)){
-      
-      durations=durations_list[d,"durations"]
-      durations_name=durations_list[d,"durations_name"]
-      sensta=expand.grid(allsensors[,"variable_code"],area_stations[,"station_id"])
-      colnames(sensta)=c("variable_code","station_id")
-      
-      pause_sec(10) # Create a pause so curl doesn't time out - dependent on internet connection?
-      
+    pb_partition <- 1/(nrow(durations_list)*(length(date_seq)-1))
+    # ------------------------------------------------------------------------------------------------
+    for(y in 1:(length(date_seq)-1))
+    {
       # ------------------------------------------------------------------------------------------------
-      # For shasta add sensor stations
-      if(area=="shasta"){
-        # Outside watershed snow stations
-        added_sensta=rbind.data.frame(c(82,"SVB"),c(3,"SVB"),
-                                      c(82,"SVG"),c(3,"SVG"),
-                                      c(82,"SDF"),c(3,"SDF"),
-                                      c(82,"PET"),c(3,"PET"),
-                                      c(82,"LSH"),c(3,"LSH"),
-                                      c(82,"PRK"),c(3,"PRK"),
-                                      c(82,"SWT"),c(3,"SWT"),
-                                      c(82,"BWR"),c(3,"BWR"),
-                                      c(82,"DDF"),c(3,"DDF"),
-                                      c(82,"MSH"),c(3,"MSH"),
-                                      c(82,"NFS"),c(3,"NFS"),
-                                      c(82,"SFT"),c(3,"SFT"),
-                                      c(82,"ASH"),c(3,"ASH"))
-        colnames(added_sensta)=c("variable_code","station_id")
-        colnames(added_sensta)=colnames(sensta)
-        sensta=rbind.data.frame(sensta,added_sensta)
-      } else {}
-      # ------------------------------------------------------------------------------------------------
-      
-      
-      
-      
-
-      # ------------------------------------------------------------------------------------------------
-      # for each sensor station
-      for (i in 1:nrow(sensta)){
+      # Pause notification and progress bar
+      pause <- 60*2
+      if(y > 1){
+        # ------------------------------------------------------------------------------------------------
+        # Initializes the progress bar
+        max_pb <- 100
+        pb2 <- winProgressBar(title = "Windows progress bar", # Window title
+                              label = "Percentage completed", # Window label
+                              min = 0,      # Minimum value of the bar
+                              max = max_pb, # Maximum value of the bar
+                              initial = 0,  # Initial value of the bar
+                              width = 500L) # Width of the window
+        # ------------------------------------------------------------------------------------------------
         
-        variable_code=sensta[i,"variable_code"] # what code is to be loaded
-        variable_name=allsensors[match(variable_code,allsensors$variable_code),"variable_name"] # what is the variable name of that code
-        unit=allsensors[match(variable_code,allsensors$variable_code),"unit"] # what are the units of the variable
-        station_id=sensta[i,"station_id"]
-        df3=cder::cdec_query(station_id,variable_code,durations=durations,
-                             start.date = start_date,
-                             end.date = end_date)
-        df3=as.data.frame(df3)
-        colnames(df3)[5]="Date"
+        # ------------------------------------------------------------------------------------------------
+        for(p in 1:pause){
+          pause_sec(1)
+          # ------------------------------------------------------------------------------------------------
+          # Update progress bar
+          pctg <- paste(round(pause/60,1),
+                        "minute cooldown period between date sequence",
+                        round((p/pause)*100,0),'% completed')
+          setWinProgressBar(pb2,
+                            round((p/pause)*100,0),
+                            label = pctg)
+          # ------------------------------------------------------------------------------------------------
+        }
+        close(pb2)
+        # ------------------------------------------------------------------------------------------------
+      }
+      # ------------------------------------------------------------------------------------------------
+      
+      
+      
+      # ------------------------------------------------------------------------------------------------
+      for(d in 1:nrow(durations_list)){
+        
+        durations=durations_list[d,"durations"]
+        durations_name=durations_list[d,"durations_name"]
+        sensta=expand.grid(allsensors[,"variable_code"],area_stations[,"station_id"])
+        colnames(sensta)=c("variable_code","station_id")
+        
+        if(d > 1){
+          pause_sec(10) # Create a pause so curl doesn't time out - dependent on internet connection?
+        }
         
         
         # ------------------------------------------------------------------------------------------------
-        # If data for that sensor
-        if(nrow(df3)==0){}else{
-          print(file.path(path_prms_data,"cdec",variable_name,paste(station_id,durations_name,".csv",sep="")))
+        # For shasta add sensor stations
+        if(area=="shasta"){
+          # Outside watershed snow stations
+          added_sensta=rbind.data.frame(c(82,"SVB"),c(3,"SVB"),
+                                        c(82,"SVG"),c(3,"SVG"),
+                                        c(82,"SDF"),c(3,"SDF"),
+                                        c(82,"PET"),c(3,"PET"),
+                                        c(82,"LSH"),c(3,"LSH"),
+                                        c(82,"PRK"),c(3,"PRK"),
+                                        c(82,"SWT"),c(3,"SWT"),
+                                        c(82,"BWR"),c(3,"BWR"),
+                                        c(82,"DDF"),c(3,"DDF"),
+                                        c(82,"MSH"),c(3,"MSH"),
+                                        c(82,"NFS"),c(3,"NFS"),
+                                        c(82,"SFT"),c(3,"SFT"),
+                                        c(82,"ASH"),c(3,"ASH"))
+          colnames(added_sensta)=c("variable_code","station_id")
+          colnames(added_sensta)=colnames(sensta)
+          sensta=rbind.data.frame(sensta,added_sensta)
+        } else {}
+        # ------------------------------------------------------------------------------------------------
+        
+        
+        
+        
+        
+        # ------------------------------------------------------------------------------------------------
+        # For scott define limited sensors subset
+        if(area=="scott"){
+          sensors <- c(1, # river stage
+                       2, # precip accumulated
+                       3, # snow water content
+                       8, # FNF (cfs)
+                       18, # snow depth
+                       20, # river discharge
+                       24, # ET
+                       26, # solar rad
+                       29, # net rad
+                       30, # temp air average
+                       31, # temp air max
+                       32,# temp air min
+                       45, # precip (incremental)
+                       64, # pan evap
+                       65, # fnf (af)
+                       66, # fnf (monthly volume)
+                       80, # precipitation (revised)
+                       82,# snow water content (revised)
+                       103:108, # more solar rad
+                       126:132, # vapor pressure
+                       237:238) # min max swc
+          stations <- c('SCT','CHA','QTZ','CLB','MB3','BXC','ETN','MBL','SWJ','WLC','SGN','FCC','MNM','SCK','DDC','SDA','SFJ','SNB')
+          sensta <- expand.grid(sensors,stations)
+          colnames(sensta)=c("variable_code","station_id")
+        }
+        # ------------------------------------------------------------------------------------------------
+        
+        
+        
+        
+        
+        
+        # ------------------------------------------------------------------------------------------------
+        # for each sensor station
+        for (i in 1:nrow(sensta)){
+          
+          
+          variable_code=sensta[i,"variable_code"] # what code is to be loaded
+          variable_name=allsensors[match(variable_code,allsensors$variable_code),"variable_name"] # what is the variable name of that code
+          unit=allsensors[match(variable_code,allsensors$variable_code),"unit"] # what are the units of the variable
+          station_id=sensta[i,"station_id"]
+          pause_sec(0.1)
+          
           # ------------------------------------------------------------------------------------------------
-          if(append_mode == T)
-          {
+          # Second chance in case curl fails?
+          tryCatch({
+            df3=cder::cdec_query(station_id,variable_code,durations=durations,
+                                 start.date = date_seq[y],
+                                 end.date = date_seq[y+1])
+          }, error = function(e){
             # ------------------------------------------------------------------------------------------------
-            # if the file already exists then read it in
-            if(file.exists(file.path(path_prms_data,"cdec",variable_name,paste(station_id,durations_name,".csv",sep=""))))
+            # Pause notification and progress bar
+            pause <- 60
+            # ------------------------------------------------------------------------------------------------
+            
+            # ------------------------------------------------------------------------------------------------
+            # Initializes the progress bar
+            max_pb <- 100
+            pb2 <- winProgressBar(title = "Windows progress bar", # Window title
+                                  label = "Percentage completed", # Window label
+                                  min = 0,      # Minimum value of the bar
+                                  max = max_pb, # Maximum value of the bar
+                                  initial = 0,  # Initial value of the bar
+                                  width = 500L) # Width of the window
+            # ------------------------------------------------------------------------------------------------
+            
+            # ------------------------------------------------------------------------------------------------
+            for(p in 1:pause){
+              pause_sec(1)
+              # ------------------------------------------------------------------------------------------------
+              # Update progress bar
+              pctg <- paste(round(pause/60,1),
+                            "minute cooldown period because of data fetch error",
+                            round((p/pause)*100,0),'% completed')
+              setWinProgressBar(pb2,
+                                round((p/pause)*100,0),
+                                label = pctg)
+              # ------------------------------------------------------------------------------------------------
+            }
+            close(pb2)
+            # ------------------------------------------------------------------------------------------------
+            df3=cder::cdec_query(station_id,variable_code,durations=durations,
+                                 start.date = date_seq[y],
+                                 end.date = date_seq[y+1])
+          })
+          # ------------------------------------------------------------------------------------------------
+
+          
+
+          # ------------------------------------------------------------------------------------------------
+          # If data for that sensor
+          if(nrow(df3)==0){}else{
+
+            
+            df3=as.data.frame(df3)
+            colnames(df3)[5]="Date"
+            df3$Date <- as.character(df3$Date)
+            df3$ObsDate <- as.character(df3$ObsDate)
+            
+            # ------------------------------------------------------------------------------------------------
+            if(durations == 'H')
             {
-              
-              df_orig <- read.csv(file.path(path_prms_data,"cdec",variable_name,paste(station_id,durations_name,".csv",sep="")))
-              colnames <- colnames(df_orig)
-              
-              # ------------------------------------------------------------------------------------------------
-              if(!('ObsDate' %in% colnames)){
-                df_orig$ObsDate <- rep(NA,nrow(df_orig))
-              }
-              # ------------------------------------------------------------------------------------------------
-              
-              
+              inds <- which(hour(df3$Date) == 0) # tests for where midnight is, or if its missing
               # ------------------------------------------------------------------------------------------------
               # are there dates where posixct coercison fails
-              for(j in 1:nrow(df_orig))
+              for(j in inds)
               {
                 
-                year <- year(df_orig$Date[NA_indices[j]])
-                month <- month(df_orig$Date[NA_indices[j]])
-                day <- day(df_orig$Date[NA_indices[j]])
-                hour <- str_pad(hour(df_orig$Date[NA_indices[j]]), width = 2, side = 'left', pad = '0')
-                minute <- str_pad(minute(df_orig$Date[NA_indices[j]]), width = 2, side = 'left', pad = '0')
-                second <- str_pad(second(df_orig$Date[NA_indices[j]]), width = 2, side = 'left', pad = '0')
+                year <- year(df3$Date[j])
+                month <- str_pad(month(df3$Date[j]), width = 2, side = 'left', pad = '0')
+                day <- str_pad(day(df3$Date[j]), width = 2, side = 'left', pad = '0')
+                hour <- str_pad(hour(df3$Date[j]), width = 2, side = 'left', pad = '0')
+                minute <- str_pad(minute(df3$Date[j]), width = 2, side = 'left', pad = '0')
+                second <- str_pad(second(df3$Date[j]), width = 2, side = 'left', pad = '0')
                 # ------------------------------------------------------------------------------------------------
                 # default to midnight
                 if(is.na(hour) == T|
@@ -432,10 +543,9 @@ get_cdec_data_f <- function(path_gsp_data,
                   
                 }
                 # ------------------------------------------------------------------------------------------------
-                df_orig$Date[j] <- as.POSIXct(paste(year,'-',month,'-',day,' ',hour,':',minute,':',second, sep = ''),
-                                              format = '%Y-%m-%d %H:%M:%S')
+                df3$Date[j] <- paste(year,'-',month,'-',day,' ',hour,':',minute,':',second, sep = '')
               }
-              NA_indices <- which(is.na(df_orig$Date) == TRUE)
+              NA_indices <- which(is.na(df3$Date) == TRUE)
               # ------------------------------------------------------------------------------------------------
               
               
@@ -452,12 +562,12 @@ get_cdec_data_f <- function(path_gsp_data,
                   
                   tryCatch(
                     {
-                      year <- year(df_orig$ObsDate[NA_indices[j]])
-                      month <- month(df_orig$ObsDate[NA_indices[j]])
-                      day <- day(df_orig$ObsDate[NA_indices[j]])
-                      hour <- str_pad(hour(df_orig$ObsDate[NA_indices[j]]), width = 2, side = 'left', pad = '0')
-                      minute <- str_pad(minute(df_orig$ObsDate[NA_indices[j]]), width = 2, side = 'left', pad = '0')
-                      second <- str_pad(second(df_orig$ObsDate[NA_indices[j]]), width = 2, side = 'left', pad = '0')
+                      year <- year(df3$ObsDate[NA_indices[j]])
+                      month <- str_pad(month(df3$ObsDate[NA_indices[j]]), width = 2, side = 'left', pad = '0')
+                      day <- str_pad(day(df3$ObsDate[NA_indices[j]]), width = 2, side = 'left', pad = '0')
+                      hour <- str_pad(hour(df3$ObsDate[NA_indices[j]]), width = 2, side = 'left', pad = '0')
+                      minute <- str_pad(minute(df3$ObsDate[NA_indices[j]]), width = 2, side = 'left', pad = '0')
+                      second <- str_pad(second(df3$ObsDate[NA_indices[j]]), width = 2, side = 'left', pad = '0')
                       # ------------------------------------------------------------------------------------------------
                       # default to midnight
                       if(is.na(hour) == T|
@@ -470,12 +580,11 @@ get_cdec_data_f <- function(path_gsp_data,
                         
                       }
                       # ------------------------------------------------------------------------------------------------
-                      df_orig$Date[NA_indices[j]] <- as.POSIXct(paste(year,'-',month,'-',day,' ',hour,':',minute,':',second, sep = ''),
-                                                                format = '%Y-%m-%d %H:%M:%S')
+                      df3$Date[NA_indices[j]] <- paste(year,'-',month,'-',day,' ',hour,':',minute,':',second, sep = '')
                       
                     }, error = function(e){
                       
-                      df_orig$Date[NA_indices[j]] <- as.POSIXct(as.numeric(df_orig$ObsDate[NA_indices[j]]))
+                      df3$Date[NA_indices[j]] <- df3$ObsDate[NA_indices[j]]
                       
                     })
                   
@@ -483,73 +592,174 @@ get_cdec_data_f <- function(path_gsp_data,
                 # ------------------------------------------------------------------------------------------------
               }
               # ------------------------------------------------------------------------------------------------
+            }
+            # ------------------------------------------------------------------------------------------------
+            
+            
+
+            
+            
+            
+            # ------------------------------------------------------------------------------------------------
+            # if the file already exists then read it in
+            if(file.exists(file.path(path_prms_data,"cdec",variable_name,paste(station_id,durations_name,".csv",sep=""))))
+            {
+              
+              # ------------------------------------------------------------------------------------------------
+              # initial massaging of dates
+              df_orig <- read.csv(file.path(path_prms_data,"cdec",variable_name,paste(station_id,durations_name,".csv",sep="")))
+              colnames <- colnames(df_orig)
+              
+              df_orig$Date <- as.character(df_orig$Date)
+              df3$Date <- as.character(df3$Date)
+              df3$ObsDate <- as.character(df3$ObsDate)
+              df_orig$ObsDate <- as.character(df_orig$ObsDate)
+              # ------------------------------------------------------------------------------------------------
               
               
-              compare_orig <- df_orig$Date %in% df3$Date
+              # ------------------------------------------------------------------------------------------------
+              if(!('ObsDate' %in% colnames)){
+                df_orig$ObsDate <- rep(NA,nrow(df_orig))
+              }
+              # ------------------------------------------------------------------------------------------------
+
+              
+              
+              # ------------------------------------------------------------------------------------------------
+              NA_indices <- which(is.na(df_orig$Date) == TRUE)
+              if(durations == 'H')
+              {
+                inds <- which(hour(df_orig$Date) == 0) # tests for where midnight is, or if its missing
+                # ------------------------------------------------------------------------------------------------
+                # are there dates where posixct coercison fails
+                for(j in inds)
+                {
+  
+                  year <- year(df_orig$Date[j])
+                  month <- str_pad(month(df_orig$Date[j]), width = 2, side = 'left', pad = '0')
+                  day <- str_pad(day(df_orig$Date[j]), width = 2, side = 'left', pad = '0')
+                  hour <- str_pad(hour(df_orig$Date[j]), width = 2, side = 'left', pad = '0')
+                  minute <- str_pad(minute(df_orig$Date[j]), width = 2, side = 'left', pad = '0')
+                  second <- str_pad(second(df_orig$Date[j]), width = 2, side = 'left', pad = '0')
+                  # ------------------------------------------------------------------------------------------------
+                  # default to midnight
+                  if(is.na(hour) == T|
+                     is.na(minute) == T |
+                     is.na(second) == T){
+  
+                    hour <- '00'
+                    minute <- '00'
+                    second <- '00'
+  
+                  }
+                  # ------------------------------------------------------------------------------------------------
+                  df_orig$Date[j] <- paste(year,'-',month,'-',day,' ',hour,':',minute,':',second, sep = '')
+                }
+                # ------------------------------------------------------------------------------------------------
+  
+  
+  
+                # ------------------------------------------------------------------------------------------------
+                # for each NA date find which in the backup ObsDate column
+                # try to coerce the obsdate column to correct format
+                # if it doesnt work force to midnight
+                if(length(NA_indices) > 0){
+  
+  
+                  # ------------------------------------------------------------------------------------------------
+                  for(j in 1:length(NA_indices)){
+  
+                    tryCatch(
+                      {
+                        year <- year(df_orig$ObsDate[NA_indices[j]])
+                        month <- str_pad(month(df_orig$ObsDate[NA_indices[j]]), width = 2, side = 'left', pad = '0')
+                        day <- str_pad(day(df_orig$ObsDate[NA_indices[j]]), width = 2, side = 'left', pad = '0')
+                        hour <- str_pad(hour(df_orig$ObsDate[NA_indices[j]]), width = 2, side = 'left', pad = '0')
+                        minute <- str_pad(minute(df_orig$ObsDate[NA_indices[j]]), width = 2, side = 'left', pad = '0')
+                        second <- str_pad(second(df_orig$ObsDate[NA_indices[j]]), width = 2, side = 'left', pad = '0')
+                        # ------------------------------------------------------------------------------------------------
+                        # default to midnight
+                        if(is.na(hour) == T|
+                           is.na(minute) == T |
+                           is.na(second) == T){
+  
+                          hour <- '00'
+                          minute <- '00'
+                          second <- '00'
+  
+                        }
+                        # ------------------------------------------------------------------------------------------------
+                        df_orig$Date[NA_indices[j]] <- paste(year,'-',month,'-',day,' ',hour,':',minute,':',second, sep = '')
+  
+                      }, error = function(e){
+  
+                        df_orig$Date[NA_indices[j]] <- df_orig$ObsDate[NA_indices[j]]
+  
+                      })
+  
+                  }
+                  # ------------------------------------------------------------------------------------------------
+                }
+                # ------------------------------------------------------------------------------------------------
+              } else{
+                df_orig$Date[NA_indices[j]] <- df_orig$ObsDate[NA_indices[j]] 
+              }
+              # ------------------------------------------------------------------------------------------------
+              
+              
+              compare_orig <- as.POSIXct(df_orig$Date) %in% as.POSIXct(df3$Date)
               compare_orig <- which(compare_orig == TRUE)
-              compare_new <- df3$Date %in% df_orig$Date
+              compare_new <- as.POSIXct(df3$Date) %in% as.POSIXct(df_orig$Date)
               compare_new <- which(compare_new == TRUE)
-              
-              
+
+
               # ------------------------------------------------------------------------------------------------
               # if there are no dates that are the same then rbind them, as the dates dont overlap
               # however as the last downloaded date should create a continuous record this is fine
               # otherwise find where they are the same and make sure there are no duplicates
               if(length(compare_orig) == 0)
               {
-                
+
                 df3 <- rbind(df_orig,df3)
-                
+
               } else {
-                
-                df3 <- df3[-c(compare_new[1]:tail(compare_new,1)), ]
+
+                df_orig <- df_orig[-c(compare_orig[1]:tail(compare_orig,1)), ]
                 df3 <- rbind(df_orig,df3)
-                
+
               }
               # ------------------------------------------------------------------------------------------------
-              
-              
-              
             }
             # ------------------------------------------------------------------------------------------------
-            
+            # Create output directory
+            #dir.create(file.path(path_gsp_data,"outputs",area,"cdec",variable_name))
+            dir.create(file.path(path_prms_data,"cdec",variable_name))
+            # Save results
+            #write.csv(df3,file.path(path_gsp_data,"outputs",area,"cdec",variable_name,paste(station_id,durations_name,".csv",sep="")),row.names = F)
+            write.csv(df3,file.path(path_prms_data,"cdec",variable_name,paste(station_id,durations_name,".csv",sep="")),row.names = F)
           }
           # ------------------------------------------------------------------------------------------------
-          
-          # Create output directory
-          #dir.create(file.path(path_gsp_data,"outputs",area,"cdec",variable_name))
-          dir.create(file.path(path_prms_data,"cdec",variable_name))
-          
-          # Save results
-          #write.csv(df3,file.path(path_gsp_data,"outputs",area,"cdec",variable_name,paste(station_id,durations_name,".csv",sep="")),row.names = F)
-          write.csv(df3,file.path(path_prms_data,"cdec",variable_name,paste(station_id,durations_name,".csv",sep="")),row.names = F)
+
+
+          # ------------------------------------------------------------------------------------------------
+          # Update progress bar
+          pctg <- paste(round((pb_start + ((i/nrow(sensta)) *pb_partition))*100, 0),
+                        "% completed for CDEC in",
+                        paste(area_name,'.',sep = ''),
+                        'Currently Processing Timescale:',
+                        paste0('\'',durations,'\'',' ',year(date_seq[y]),' - ',date_seq[y+1]))
+          setWinProgressBar(pb,
+                            round((pb_start + ((i/nrow(sensta)) *pb_partition))*100, 0),
+                            label = pctg)
+          # ------------------------------------------------------------------------------------------------
         }
         # ------------------------------------------------------------------------------------------------
-      
-        
-        
-      
-        
-        
-        # ------------------------------------------------------------------------------------------------
-        # Update progress bar
-        pctg <- paste(round((pb_start + (i/nrow(sensta) *pb_partition))*100, 0),
-                      "% completed for CDEC in",
-                      paste(area_name,'.',sep = ''),
-                      'Currently Processing Timescale:',
-                      '\'',
-                      durations,
-                      '\'')
-        setWinProgressBar(pb,
-                          round((pb_start + (i/nrow(sensta) *pb_partition))*100, 0),
-                          label = pctg)
-        # ------------------------------------------------------------------------------------------------
+        pb_start <- pb_start + pb_partition
       }
       # ------------------------------------------------------------------------------------------------
-      pb_start <- pb_start + pb_partition
     }
     # ------------------------------------------------------------------------------------------------
-    save(end_date,file=paste(path_prms_data,"cdec/last_downloaded_date.RData",sep=""))
+    save(end_date,file=file.path(path_prms_data,"cdec","last_downloaded_date.RData",sep=""))
   }
   # ------------------------------------------------------------------------------------------------
   
@@ -566,10 +776,21 @@ get_cdec_data_f <- function(path_gsp_data,
     # Update progress bar
     pctg <- paste('No new calendar months have been completed: passing')
     setWinProgressBar(pb,
-                      100,
+                      0,
                       label = pctg)
     # ------------------------------------------------------------------------------------------------
-    pause_sec(5)
+    
+    
+    # ------------------------------------------------------------------------------------------------
+    for(i in 1:5)
+    {
+      pause_sec(1)
+      setWinProgressBar(pb,
+                        round(((i/5)*100),0),
+                        label = pctg)
+      
+    }
+    # ------------------------------------------------------------------------------------------------
   }
   # ------------------------------------------------------------------------------------------------
   close(pb)
